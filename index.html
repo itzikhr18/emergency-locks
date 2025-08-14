@@ -6,19 +6,12 @@
     <title>Emergency Locks - שירותי מנעולים חירום 24/7</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Heebo', sans-serif;
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
             min-height: 100vh;
-        }
-        
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         .gradient-text {
@@ -29,10 +22,10 @@
         }
         
         .emergency-pulse {
-            animation: emergency-pulse 2s infinite;
+            animation: emergencyPulse 2s infinite;
         }
         
-        @keyframes emergency-pulse {
+        @keyframes emergencyPulse {
             0%, 100% { 
                 box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
                 transform: scale(1);
@@ -52,382 +45,338 @@
             50% { transform: translateY(-10px); }
         }
         
-        .fade-in {
-            animation: fadeIn 0.6s ease-out;
+        .card-hover {
+            transition: all 0.3s ease;
         }
         
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(251, 191, 36, 0.2);
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .success-fade {
+            animation: successFade 0.5s ease forwards;
+        }
+        
+        @keyframes successFade {
+            from { opacity: 0; transform: translateY(-20px); }
             to { opacity: 1; transform: translateY(0); }
-        }
-        
-        input:focus, select:focus, textarea:focus {
-            box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.3) !important;
-        }
-        
-        .success-animation {
-            animation: successBounce 0.6s ease-out;
-        }
-        
-        @keyframes successBounce {
-            0% { transform: scale(0.3); opacity: 0; }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); opacity: 1; }
         }
     </style>
 </head>
 <body class="text-white">
+    
     <!-- Header -->
-    <header class="glass-effect rounded-xl mx-4 mt-6 p-6 fade-in">
-        <div class="max-w-6xl mx-auto">
+    <header class="glass-effect py-6 mb-8">
+        <div class="container mx-auto px-4">
             <div class="flex flex-col lg:flex-row items-center justify-between gap-6">
-                <!-- Logo -->
+                
+                <!-- Logo Section -->
                 <div class="flex items-center gap-4">
                     <div class="w-16 h-16 bg-blue-800 rounded-xl flex items-center justify-center border-2 border-yellow-400 floating">
                         <i class="fas fa-key text-yellow-400 text-2xl"></i>
                     </div>
                     <div>
-                        <h1 class="text-3xl lg:text-4xl font-bold gradient-text">Emergency Locks</h1>
-                        <p class="text-gray-300 text-sm">שירותי מנעולים חירום מקצועיים</p>
+                        <h1 class="text-3xl font-bold gradient-text">Emergency Locks</h1>
+                        <p class="text-gray-300 text-sm">שירותי מנעולים חירום 24/7</p>
                     </div>
                 </div>
                 
-                <!-- Credentials -->
-                <div class="flex flex-wrap gap-3 justify-center lg:justify-end">
-                    <div class="bg-green-600 bg-opacity-20 px-3 py-1 rounded-full text-green-400 text-xs border border-green-600">
-                        <i class="fas fa-certificate mr-1"></i>
-                        רישיון מקצועי
-                    </div>
-                    <div class="bg-blue-600 bg-opacity-20 px-3 py-1 rounded-full text-blue-400 text-xs border border-blue-600">
-                        <i class="fas fa-shield-alt mr-1"></i>
-                        מבוטח ומורשה
-                    </div>
-                    <div class="bg-yellow-600 bg-opacity-20 px-3 py-1 rounded-full text-yellow-400 text-xs border border-yellow-600">
-                        <i class="fas fa-star mr-1"></i>
-                        דירוג 4.9/5
-                    </div>
+                <!-- Contact Info -->
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="tel:+972527237064" class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2 emergency-pulse">
+                        <i class="fas fa-phone"></i>
+                        052-723-7064
+                    </a>
+                    <a href="https://wa.me/972527237064" target="_blank" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2">
+                        <i class="fab fa-whatsapp"></i>
+                        WhatsApp
+                    </a>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Emergency Alert -->
-    <div class="mx-4 mt-6">
-        <div class="max-w-6xl mx-auto">
-            <div class="bg-red-600 bg-opacity-90 backdrop-filter backdrop-blur-lg rounded-xl p-6 emergency-pulse border border-red-500">
-                <div class="text-center">
-                    <div class="text-4xl mb-3">🚨</div>
-                    <h2 class="text-2xl font-bold mb-3">שירות חירום 24/7</h2>
-                    <p class="text-red-100 mb-4">נעלת את המפתח? בעיה דחופה? אנחנו כאן בשבילך!</p>
-                    
-                    <div class="flex flex-col sm:flex-row gap-3 justify-center">
-                        <a href="tel:+972527237064" class="bg-white text-red-600 px-6 py-3 rounded-lg font-bold hover:bg-red-50 transition-all duration-300 transform hover:scale-105">
-                            <i class="fas fa-phone mr-2"></i>
-                            התקשר עכשיו - 052-723-7064
-                        </a>
-                        <a href="https://wa.me/972527237064?text=שלום%2C%20יש%20לי%20בעיה%20דחופה%20עם%20מנעול" target="_blank" class="bg-green-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-green-700 transition-all duration-300 transform hover:scale-105">
-                            <i class="fab fa-whatsapp mr-2"></i>
-                            WhatsApp מהיר
-                        </a>
-                    </div>
-                </div>
+    <div class="container mx-auto px-4">
+        
+        <!-- Emergency Alert -->
+        <div class="glass-effect rounded-2xl p-6 mb-8 text-center border-2 border-red-500">
+            <div class="text-red-400 text-4xl mb-4">
+                <i class="fas fa-exclamation-triangle"></i>
             </div>
+            <h2 class="text-2xl font-bold text-red-400 mb-2">חירום? נעלת את המפתח?</h2>
+            <p class="text-gray-300 mb-4">אנחנו זמינים 24 שעות ביממה • הגעה תוך 20 דקות</p>
+            <a href="tel:+972527237064" class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg inline-block emergency-pulse">
+                <i class="fas fa-phone-alt mr-2"></i>
+                חייג עכשיו לחירום
+            </a>
         </div>
-    </div>
 
-    <!-- Services Grid -->
-    <div class="mx-4 mt-8">
-        <div class="max-w-6xl mx-auto">
+        <!-- Services Grid -->
+        <div class="mb-12">
             <h2 class="text-3xl font-bold text-center mb-8 gradient-text">השירותים שלנו</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Service Cards -->
-                <div class="glass-effect rounded-xl p-6 hover:bg-opacity-20 transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="text-4xl text-yellow-400 mb-4">🚪</div>
-                    <h3 class="text-xl font-bold text-yellow-400 mb-2">פתיחת דלתות</h3>
-                    <p class="text-green-400 font-bold mb-3">החל מ-180₪</p>
-                    <p class="text-gray-300 text-sm">פתיחת דלתות ללא נזק • כל סוגי המנעולים</p>
-                </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
-                <div class="glass-effect rounded-xl p-6 hover:bg-opacity-20 transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="text-4xl text-yellow-400 mb-4">🔧</div>
-                    <h3 class="text-xl font-bold text-yellow-400 mb-2">החלפת מנעולים</h3>
-                    <p class="text-green-400 font-bold mb-3">החל מ-320₪</p>
-                    <p class="text-gray-300 text-sm">מנעולים איכותיים • אחריות 2 שנים</p>
+                <div class="glass-effect rounded-xl p-6 card-hover">
+                    <div class="text-yellow-400 text-3xl mb-4">
+                        <i class="fas fa-door-open"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-yellow-400">פתיחת דלתות</h3>
+                    <p class="text-green-400 font-bold mb-2">החל מ-180₪</p>
+                    <p class="text-gray-300">פתיחת דלתות ללא נזק • כל סוגי המנעולים</p>
                 </div>
-                
-                <div class="glass-effect rounded-xl p-6 hover:bg-opacity-20 transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="text-4xl text-yellow-400 mb-4">🔑</div>
-                    <h3 class="text-xl font-bold text-yellow-400 mb-2">שכפול מפתחות</h3>
-                    <p class="text-green-400 font-bold mb-3">החל מ-25₪</p>
-                    <p class="text-gray-300 text-sm">שכפול מדויק • כל סוגי המפתחות</p>
-                </div>
-                
-                <div class="glass-effect rounded-xl p-6 hover:bg-opacity-20 transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="text-4xl text-yellow-400 mb-4">🏠</div>
-                    <h3 class="text-xl font-bold text-yellow-400 mb-2">מערכות נעילה</h3>
-                    <p class="text-green-400 font-bold mb-3">החל מ-450₪</p>
-                    <p class="text-gray-300 text-sm">מנעולים חכמים • קודים ושלטים</p>
-                </div>
-                
-                <div class="glass-effect rounded-xl p-6 hover:bg-opacity-20 transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="text-4xl text-yellow-400 mb-4">🏦</div>
-                    <h3 class="text-xl font-bold text-yellow-400 mb-2">כספות וכזנות</h3>
-                    <p class="text-green-400 font-bold mb-3">החל מ-400₪</p>
-                    <p class="text-gray-300 text-sm">פתיחת כספות • שינוי קודים</p>
-                </div>
-                
-                <div class="glass-effect rounded-xl p-6 hover:bg-opacity-20 transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="text-4xl text-yellow-400 mb-4">🚗</div>
-                    <h3 class="text-xl font-bold text-yellow-400 mb-2">שירותי רכב</h3>
-                    <p class="text-green-400 font-bold mb-3">החל מ-250₪</p>
-                    <p class="text-gray-300 text-sm">פתיחת רכבים • שכפול מפתחות רכב</p>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- Order Form -->
-    <div class="mx-4 mt-12 mb-8">
-        <div class="max-w-4xl mx-auto">
-            <div class="glass-effect rounded-xl p-8">
-                <h2 class="text-3xl font-bold text-center mb-6 gradient-text">הזמן שירות עכשיו</h2>
-                <p class="text-center text-gray-300 mb-8">מלא פרטים ונחזור אליך תוך 3 דקות</p>
-                
-                <form id="leadForm" class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-yellow-400 font-bold mb-2">
-                                <i class="fas fa-user mr-2"></i>שם מלא *
-                            </label>
-                            <input type="text" id="name" name="name" required 
-                                   class="w-full px-4 py-3 bg-gray-800 bg-opacity-50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-yellow-400 focus:outline-none transition-colors"
-                                   placeholder="איך קוראים לך?">
-                        </div>
-                        
-                        <div>
-                            <label class="block text-yellow-400 font-bold mb-2">
-                                <i class="fas fa-phone mr-2"></i>מספר טלפון *
-                            </label>
-                            <input type="tel" id="phone" name="phone" required 
-                                   class="w-full px-4 py-3 bg-gray-800 bg-opacity-50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-yellow-400 focus:outline-none transition-colors"
-                                   placeholder="050-1234567">
-                        </div>
+                <div class="glass-effect rounded-xl p-6 card-hover">
+                    <div class="text-yellow-400 text-3xl mb-4">
+                        <i class="fas fa-tools"></i>
                     </div>
-                    
-                    <div>
-                        <label class="block text-yellow-400 font-bold mb-2">
-                            <i class="fas fa-map-marker-alt mr-2"></i>כתובת מלאה *
-                        </label>
-                        <input type="text" id="address" name="address" required 
-                               class="w-full px-4 py-3 bg-gray-800 bg-opacity-50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-yellow-400 focus:outline-none transition-colors"
-                               placeholder="רחוב, מספר בית, עיר">
-                    </div>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-yellow-400 font-bold mb-2">
-                                <i class="fas fa-tools mr-2"></i>סוג השירות *
-                            </label>
-                            <select id="service" name="service" required 
-                                    class="w-full px-4 py-3 bg-gray-800 bg-opacity-50 border border-gray-600 rounded-lg text-white focus:border-yellow-400 focus:outline-none transition-colors">
-                                <option value="">בחר שירות</option>
-                                <option value="פתיחת דלת">🚪 פתיחת דלת - 180₪</option>
-                                <option value="החלפת מנעול">🔧 החלפת מנעול - 320₪</option>
-                                <option value="שכפול מפתחות">🔑 שכפול מפתחות - 25₪</option>
-                                <option value="מערכת נעילה">🏠 מערכת נעילה - 450₪</option>
-                                <option value="כספת">🏦 כספת/כזנה - 400₪</option>
-                                <option value="רכב">🚗 שירותי רכב - 250₪</option>
-                                <option value="אחר">❓ אחר</option>
-                            </select>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-yellow-400 font-bold mb-2">
-                                <i class="fas fa-clock mr-2"></i>רמת דחיפות *
-                            </label>
-                            <select id="urgency" name="urgency" required 
-                                    class="w-full px-4 py-3 bg-gray-800 bg-opacity-50 border border-gray-600 rounded-lg text-white focus:border-yellow-400 focus:outline-none transition-colors">
-                                <option value="">בחר דחיפות</option>
-                                <option value="חירום">🚨 חירום - עכשיו!</option>
-                                <option value="דחוף">⚡ דחוף - תוך שעתיים</option>
-                                <option value="רגיל">📅 רגיל - היום</option>
-                                <option value="תיאום">📞 תיאום מראש</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <label class="block text-yellow-400 font-bold mb-2">
-                            <i class="fas fa-comment mr-2"></i>תיאור הבעיה
-                        </label>
-                        <textarea id="description" name="description" rows="3" 
-                                  class="w-full px-4 py-3 bg-gray-800 bg-opacity-50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-yellow-400 focus:outline-none transition-colors resize-none"
-                                  placeholder="תאר בקצרה מה קרה או מה אתה צריך..."></textarea>
-                    </div>
-                    
-                    <button type="submit" id="submitBtn" 
-                            class="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 text-gray-900 font-bold py-4 px-6 rounded-lg hover:from-yellow-600 hover:to-yellow-700 transform hover:scale-105 transition-all duration-300 shadow-lg">
-                        <i class="fas fa-paper-plane mr-2"></i>
-                        שלח בקשה והזמן שירות
-                    </button>
-                </form>
-                
-                <!-- Success Message -->
-                <div id="successMessage" class="hidden mt-6 bg-green-600 bg-opacity-20 border border-green-500 rounded-lg p-6 text-center success-animation">
-                    <div class="text-4xl text-green-400 mb-3">✅</div>
-                    <h3 class="text-xl font-bold text-green-400 mb-2">הבקשה נשלחה בהצלחה!</h3>
-                    <p class="text-green-300 mb-3">נחזור אליך תוך 3-5 דקות לתיאום הגעה</p>
-                    <p class="text-sm text-green-400">
-                        <i class="fas fa-database mr-1"></i>
-                        הפרטים נשמרו במערכת לתיעוד ומעקב
-                    </p>
+                    <h3 class="text-xl font-semibold mb-2 text-yellow-400">החלפת מנעולים</h3>
+                    <p class="text-green-400 font-bold mb-2">החל מ-320₪</p>
+                    <p class="text-gray-300">מנעולים איכותיים • אחריות 2 שנים</p>
                 </div>
-                
-                <!-- Error Message -->
-                <div id="errorMessage" class="hidden mt-6 bg-red-600 bg-opacity-20 border border-red-500 rounded-lg p-6 text-center">
-                    <div class="text-4xl text-red-400 mb-3">❌</div>
-                    <h3 class="text-xl font-bold text-red-400 mb-2">שגיאה בשליחה</h3>
-                    <p class="text-red-300 mb-3">משהו השתבש, אנא נסה שוב או התקשר ישירות</p>
-                    <a href="tel:+972527237064" class="inline-block bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
-                        <i class="fas fa-phone mr-2"></i>התקשר עכשיו
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- Reviews -->
-    <div class="mx-4 mb-8">
-        <div class="max-w-6xl mx-auto">
-            <div class="glass-effect rounded-xl p-8">
-                <h3 class="text-2xl font-bold text-center mb-6 gradient-text">מה הלקוחות שלנו אומרים</h3>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-gray-800 bg-opacity-50 rounded-lg p-6 border-r-4 border-yellow-400">
-                        <div class="flex justify-between items-start mb-3">
-                            <div>
-                                <h4 class="font-bold text-yellow-400">דוד כהן</h4>
-                                <p class="text-sm text-gray-400">תל אביב</p>
-                            </div>
-                            <div class="text-yellow-400">⭐⭐⭐⭐⭐</div>
-                        </div>
-                        <p class="text-gray-300 text-sm">"הגיע תוך 18 דקות בלילה, פתח את הדלת בלי לפגוע בכלום. מחיר הוגן ושירות מקצועי."</p>
+                <div class="glass-effect rounded-xl p-6 card-hover">
+                    <div class="text-yellow-400 text-3xl mb-4">
+                        <i class="fas fa-key"></i>
                     </div>
-                    
-                    <div class="bg-gray-800 bg-opacity-50 rounded-lg p-6 border-r-4 border-yellow-400">
-                        <div class="flex justify-between items-start mb-3">
-                            <div>
-                                <h4 class="font-bold text-yellow-400">רחל לוי</h4>
-                                <p class="text-sm text-gray-400">חולון</p>
-                            </div>
-                            <div class="text-yellow-400">⭐⭐⭐⭐⭐</div>
-                        </div>
-                        <p class="text-gray-300 text-sm">"החליף לי 3 מנעולים בבית חדש. עבודה מדויקת ונקייה, הסביר הכל בסבלנות."</p>
+                    <h3 class="text-xl font-semibold mb-2 text-yellow-400">שכפול מפתחות</h3>
+                    <p class="text-green-400 font-bold mb-2">החל מ-25₪</p>
+                    <p class="text-gray-300">שכפול מדויק • כל סוגי המפתחות</p>
+                </div>
+
+                <div class="glass-effect rounded-xl p-6 card-hover">
+                    <div class="text-yellow-400 text-3xl mb-4">
+                        <i class="fas fa-home"></i>
                     </div>
-                    
-                    <div class="bg-gray-800 bg-opacity-50 rounded-lg p-6 border-r-4 border-yellow-400">
-                        <div class="flex justify-between items-start mb-3">
-                            <div>
-                                <h4 class="font-bold text-yellow-400">יוסי אברהם</h4>
-                                <p class="text-sm text-gray-400">בת ים</p>
-                            </div>
-                            <div class="text-yellow-400">⭐⭐⭐⭐⭐</div>
-                        </div>
-                        <p class="text-gray-300 text-sm">"נעלתי את המפתח ברכב עם התינוק בפנים. הגיע תוך 15 דקות ופתח בזהירות."</p>
+                    <h3 class="text-xl font-semibold mb-2 text-yellow-400">מערכות נעילה</h3>
+                    <p class="text-green-400 font-bold mb-2">החל מ-450₪</p>
+                    <p class="text-gray-300">מנעולים חכמים • קודים ושלטים</p>
+                </div>
+
+                <div class="glass-effect rounded-xl p-6 card-hover">
+                    <div class="text-yellow-400 text-3xl mb-4">
+                        <i class="fas fa-vault"></i>
                     </div>
+                    <h3 class="text-xl font-semibold mb-2 text-yellow-400">כספות וכזנות</h3>
+                    <p class="text-green-400 font-bold mb-2">החל מ-400₪</p>
+                    <p class="text-gray-300">פתיחת כספות • שינוי קודים</p>
+                </div>
+
+                <div class="glass-effect rounded-xl p-6 card-hover">
+                    <div class="text-yellow-400 text-3xl mb-4">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-yellow-400">שירותי רכב</h3>
+                    <p class="text-green-400 font-bold mb-2">החל מ-250₪</p>
+                    <p class="text-gray-300">פתיחת רכבים • שכפול מפתחות רכב</p>
                 </div>
             </div>
         </div>
+
+        <!-- Trust Badges -->
+        <div class="glass-effect rounded-2xl p-6 mb-12 border-2 border-green-500">
+            <h3 class="text-2xl font-bold text-center mb-6 text-green-400">למה לבחור ב-Emergency Locks?</h3>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="text-center">
+                    <div class="text-green-400 text-2xl mb-2">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="font-bold text-sm">12 שנות ניסיון</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-green-400 text-2xl mb-2">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="font-bold text-sm">מבוטח ומורשה</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-green-400 text-2xl mb-2">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="font-bold text-sm">זמינות 24/7</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-green-400 text-2xl mb-2">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="font-bold text-sm">דירוג 4.9/5</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Order Form -->
+        <div class="glass-effect rounded-2xl p-8 mb-12">
+            <h2 class="text-2xl font-bold text-center mb-6 gradient-text">הזמן שירות עכשיו</h2>
+            <p class="text-center text-gray-300 mb-8">מלא פרטים ונחזור אליך תוך 3 דקות</p>
+            
+            <form id="orderForm" class="max-w-2xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-yellow-400 font-semibold mb-2">שם מלא:</label>
+                        <input type="text" name="name" required class="w-full p-3 rounded-lg bg-gray-800 border border-gray-600 text-white focus:border-yellow-400 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-yellow-400 font-semibold mb-2">טלפון:</label>
+                        <input type="tel" name="phone" required class="w-full p-3 rounded-lg bg-gray-800 border border-gray-600 text-white focus:border-yellow-400 focus:outline-none">
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <label class="block text-yellow-400 font-semibold mb-2">כתובת מדויקת:</label>
+                    <input type="text" name="address" required class="w-full p-3 rounded-lg bg-gray-800 border border-gray-600 text-white focus:border-yellow-400 focus:outline-none">
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-yellow-400 font-semibold mb-2">סוג השירות:</label>
+                        <select name="service" required class="w-full p-3 rounded-lg bg-gray-800 border border-gray-600 text-white focus:border-yellow-400 focus:outline-none">
+                            <option value="">בחר שירות</option>
+                            <option value="פתיחת דלת">🚪 פתיחת דלת - 180₪</option>
+                            <option value="החלפת מנעול">🔧 החלפת מנעול - 320₪</option>
+                            <option value="שכפול מפתחות">🔑 שכפול מפתחות - 25₪</option>
+                            <option value="מערכת נעילה">🏠 מערכת נעילה - 450₪</option>
+                            <option value="כספת">🏦 שירותי כספות - 400₪</option>
+                            <option value="רכב">🚗 שירותי רכב - 250₪</option>
+                            <option value="אחר">❓ אחר - תיאום מחיר</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-yellow-400 font-semibold mb-2">דחיפות:</label>
+                        <select name="urgency" required class="w-full p-3 rounded-lg bg-gray-800 border border-gray-600 text-white focus:border-yellow-400 focus:outline-none">
+                            <option value="">בחר דחיפות</option>
+                            <option value="חירום">🚨 חירום - עכשיו!</option>
+                            <option value="דחוף">⚡ דחוף - תוך שעתיים</option>
+                            <option value="רגיל">📅 רגיל - היום</option>
+                            <option value="תיאום">📞 תיאום מראש</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <label class="block text-yellow-400 font-semibold mb-2">תיאור הבעיה:</label>
+                    <textarea name="description" rows="3" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-600 text-white focus:border-yellow-400 focus:outline-none" placeholder="תאר בקצרה מה קרה..."></textarea>
+                </div>
+                
+                <button type="submit" class="w-full bg-gradient-to-r from-yellow-400 to-yellow-600 text-gray-900 font-bold py-4 px-6 rounded-lg hover:from-yellow-500 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105">
+                    <i class="fas fa-paper-plane mr-2"></i>
+                    שלח בקשה והזמן מנעולן
+                </button>
+            </form>
+            
+            <div id="successMessage" class="hidden bg-green-600 text-white p-6 rounded-lg mt-6 text-center success-fade">
+                <div class="text-3xl mb-2">✅</div>
+                <h3 class="text-xl font-bold mb-2">הבקשה נשלחה בהצלחה!</h3>
+                <p>המנעולן יחזור אליך תוך 3-5 דקות לתיאום הגעה</p>
+            </div>
+        </div>
+
+        <!-- Reviews -->
+        <div class="glass-effect rounded-2xl p-8 mb-12">
+            <h3 class="text-2xl font-bold text-center mb-8 gradient-text">מה הלקוחות אומרים</h3>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="glass-effect rounded-xl p-6 border-r-4 border-yellow-400">
+                    <div class="flex justify-between items-start mb-3">
+                        <div class="font-bold text-yellow-400">דוד כהן - תל אביב</div>
+                        <div class="text-yellow-400">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p class="text-gray-300">"הגיע תוך 18 דקות בלילה, פתח את הדלת בלי לפגוע בכלום. מחיר הוגן ושירות מקצועי."</p>
+                </div>
+                
+                <div class="glass-effect rounded-xl p-6 border-r-4 border-yellow-400">
+                    <div class="flex justify-between items-start mb-3">
+                        <div class="font-bold text-yellow-400">רחל לוי - חולון</div>
+                        <div class="text-yellow-400">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p class="text-gray-300">"החליף לי 3 מנעולים בבית חדש. עבודה מדויקת ונקייה, הסביר הכל בסבלנות."</p>
+                </div>
+                
+                <div class="glass-effect rounded-xl p-6 border-r-4 border-yellow-400">
+                    <div class="flex justify-between items-start mb-3">
+                        <div class="font-bold text-yellow-400">יוסי אברהם - בת ים</div>
+                        <div class="text-yellow-400">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p class="text-gray-300">"נעלתי את המפתח ברכב עם התינוק בפנים. הגיע תוך 15 דקות ופתח בזהירות."</p>
+                </div>
+                
+                <div class="glass-effect rounded-xl p-6 border-r-4 border-yellow-400">
+                    <div class="flex justify-between items-start mb-3">
+                        <div class="font-bold text-yellow-400">מיכל גרין - ראשון</div>
+                        <div class="text-yellow-400">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p class="text-gray-300">"התקין מנעול חכם עם קוד. הכל עבד מהר ומושלם. מקצועי ואמין."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="glass-effect rounded-2xl p-6 text-center">
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-4">
+                <a href="tel:+972527237064" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg flex items-center gap-2">
+                    <i class="fas fa-phone"></i>
+                    052-723-7064
+                </a>
+                <a href="https://wa.me/972527237064" target="_blank" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg flex items-center gap-2">
+                    <i class="fab fa-whatsapp"></i>
+                    שלח הודעה
+                </a>
+            </div>
+            <p class="text-gray-400 text-sm">
+                Emergency Locks © 2024 • מנעולן מקצועי ומבוטח • זמינות 24/7
+            </p>
+        </footer>
     </div>
 
     <script>
-        document.getElementById('leadForm').addEventListener('submit', async function(e) {
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const submitBtn = document.getElementById('submitBtn');
-            const successMessage = document.getElementById('successMessage');
-            const errorMessage = document.getElementById('errorMessage');
-            
-            // הסתרת הודעות קודמות
-            successMessage.classList.add('hidden');
-            errorMessage.classList.add('hidden');
-            
-            // שינוי כפתור לטעינה
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>שולח...';
-            submitBtn.disabled = true;
-            
-            // איסוף נתונים
             const formData = new FormData(this);
-            const leadData = {};
+            const orderData = {};
             for (let [key, value] of formData.entries()) {
-                leadData[key] = value;
+                orderData[key] = value;
             }
             
-            try {
-                // הוספת חותמת זמן
-                const now = new Date();
-                leadData.timestamp = now.toLocaleString('he-IL');
-                leadData.date = now.toLocaleDateString('he-IL');
-                leadData.time = now.toLocaleTimeString('he-IL');
-                
-                // שליחה לגוגל שיטס (השלב הזה ידרוש הגדרה של Google Apps Script או Google Form)
-                // כרגע נכין את הנתונים לשליחה עתידית
-                
-                // יצירת הודעה ל-WhatsApp
-                const whatsappMessage = `🔧 ליד חדש מ-Emergency-Locks.com!
-                
-👤 שם: ${leadData.name}
-📱 טלפון: ${leadData.phone}
-📍 כתובת: ${leadData.address}
-🔧 שירות: ${leadData.service}
-⏰ דחיפות: ${leadData.urgency}
-📝 תיאור: ${leadData.description || 'לא צוין'}
+            // Show success message
+            document.getElementById('successMessage').classList.remove('hidden');
+            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+            
+            // Create WhatsApp message
+            const message = `🔐 הזמנה חדשה מ-Emergency Locks!
 
-📅 תאריך: ${leadData.date}
-⏰ שעה: ${leadData.time}
+👤 שם: ${orderData.name}
+📱 טלפון: ${orderData.phone}
+📍 כתובת: ${orderData.address}
+🔧 שירות: ${orderData.service}
+⏰ דחיפות: ${orderData.urgency}
+📝 תיאור: ${orderData.description}
 
 ---
-נשלח מהאתר הרשמי Emergency-Locks.com`;
-                
-                // שליחה ל-WhatsApp
-                const whatsappUrl = `https://wa.me/972527237064?text=${encodeURIComponent(whatsappMessage)}`;
-                
-                // הדמיית שליחה לגוגל שיטס (כאן תוסיף את ה-API call האמיתי)
-                // await fetch('YOUR_GOOGLE_APPS_SCRIPT_URL', {
-                //     method: 'POST',
-                //     mode: 'no-cors',
-                //     headers: { 'Content-Type': 'application/json' },
-                //     body: JSON.stringify(leadData)
-                // });
-                
-                // הצגת הודעת הצלחה
-                successMessage.classList.remove('hidden');
-                successMessage.scrollIntoView({ behavior: 'smooth' });
-                
-                // פתיחת WhatsApp אחרי 2 שניות
-                setTimeout(() => {
-                    window.open(whatsappUrl, '_blank');
-                }, 2000);
-                
-                // איפוס הטופס אחרי 5 שניות
-                setTimeout(() => {
-                    this.reset();
-                    successMessage.classList.add('hidden');
-                }, 15000);
-                
-            } catch (error) {
-                console.error('Error:', error);
-                errorMessage.classList.remove('hidden');
-                errorMessage.scrollIntoView({ behavior: 'smooth' });
-            } finally {
-                // החזרת כפתור למצב רגיל
-                submitBtn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i>שלח בקשה והזמן שירות';
-                submitBtn.disabled = false;
-            }
+נשלח מ: emergency-locks.com
+זמן: ${new Date().toLocaleString('he-IL')}`;
+            
+            // Send to WhatsApp
+            const whatsappUrl = `https://wa.me/972527237064?text=${encodeURIComponent(message)}`;
+            
+            setTimeout(() => {
+                window.open(whatsappUrl, '_blank');
+            }, 2000);
+            
+            // Reset form after 10 seconds
+            setTimeout(() => {
+                this.reset();
+                document.getElementById('successMessage').classList.add('hidden');
+            }, 10000);
         });
         
-        // פורמט טלפון אוטומטי
-        document.getElementById('phone').addEventListener('input', function(e) {
+        // Phone number formatting
+        document.querySelector('input[name="phone"]').addEventListener('input', function(e) {
             let value = e.target.value.replace(/\D/g, '');
             if (value.length > 0) {
                 if (value.length <= 10) {
@@ -436,27 +385,15 @@
                 e.target.value = value;
             }
         });
-        
-        // הוספת אפקטי אנימציה לעמוד
-        window.addEventListener('scroll', function() {
-            const elements = document.querySelectorAll('.glass-effect');
-            elements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < window.innerHeight - elementVisible) {
-                    element.classList.add('fade-in');
-                }
-            });
-        });
     </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"96f3e1401e64693f","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.8.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
 </body>
 </html>
     <script id="html_badge_script1">
         window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
-            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDszPqaAbqc0ZsGoStesYl5JbgIbluMA%2BF46UyNfS2TI9EeppfDD%2FwZ5pOzCDiHQx2fOhQEBaVcYY3z9emjhDNmbfr5GM940xSlqj3K3Z1vwm8gbLrBHti8QL34u5OKX3jrl3XoU%2BJ3CC5B9cZPuTo9lCBIzH8kOQMH7%2Fi%2B3I4rHhNd9tAJ2txlDRJmwrussp3y%2F3PZ91uWnyyU2QAqR58Afj82RgAi%2Brk0Vlp0LAOGZ9v7VyEusV43M4qA%2B6AJpejOqOAVJX7AkfONesJ1nNsbfU%2Btgcx6h5YEdhvjdN6797Phhojw096YBlbf%2FlE9PMLbohK85wm066tJjb3zdwBy6PkUDPTTU%2FjbwBDrlGU9Uzu1oZhtBKEmw7ufuR9tzCht0HPpCzJijKlJQwtvTn6SFjnT6EQX%2BURQnJ96lDWzkOODZOLjSgASBcXroyusH0dKuvZ9ETHBnHxTQIwIsxL9hO9ALRgApKDpYM%2FBqYqO5ipXkrzQmCmp6kCyCWE0FAiO0q%2Bicb1apKw%2FMg8WsitRc%3D";
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDiDAmUUduNzC5QWUAZ6rKxDd1R9OP62C5Z26Z2srO56rBCaqslH53OPggFTdeTue0OS6%2B%2BNMdcr9N%2B1JfgJbYBp4m8O7S%2Fx7RaJwh4dCc9KT%2FYq%2FZYBsiN9EYY%2FdL7hZZuOGJdxSbabIwj0%2Fiw1sVAdMFDga8iMCfucR2xD1uTY4ZhsM4V7nN5xa3gAuI2Vc1U6plIS9i5eFiZLQlvlOA4FqE7zRVCoCp%2FMk%2F24aOP1XtuJGE%2BS%2F%2F46ASl1%2F9GXIGGhU7oBm%2Bnbz99%2Bh8teGw6NUhAhks9QMAiidWaJ8n8L8Sum3EMkVU67%2BwbrjGi0U3ut0seCx0OzUFzQ%2BGTIB7boR1G6AIEk6U7VHKjdfjv2Y78oNUq8q3AtmRN5ku60MR3A3Zj1riq6JTF00HNrOzpCR7VMtQTyrdlQvQA4kTBv%2BwiY%2BphaM%2BF6QD0PIg5GNZtbwgM0oCULRa5BVLsLsHpR9sRxbyxsFdI%2F0ISbx9WHLHuNkLDV1ba7uQFKTfdyuew%3D%3D";
         window.__genspark_locale = "en-US";
-        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDszPqaAbqc0ZsGoStesYl5JbgIbluMA+F46UyNfS2TI9EeppfDD/wZ5pOzCDiHQx2fOhQEBaVcYY3z9emjhDNmbfr5GM940xSlqj3K3Z1vwm8gbLrBHti8QL34u5OKX3jrl3XoU+J3CC5B9cZPuTo9lCBIzH8kOQMH7/i+3I4rHhNd9tAJ2txlDRJmwrussp3y/3PZ91uWnyyU2QAqR58Afj82RgAi+rk0Vlp0LAOGZ9v7VyEusV43M4qA+6AJpejOqOAVJX7AkfONesJ1nNsbfU+tgcx6h5YEdhvjdN6797Phhojw096YBlbf/lE9PMLbohK85wm066tJjb3zdwBy6PkUDPTTU/jbwBDrlGU9Uzu1oZhtBKEmw7ufuR9tzCht0HPpCzJijKlJQwtvTn6SFjnT6EQX+URQnJ96lDWzkOODZOLjSgASBcXroyusH0dKuvZ9ETHBnHxTQIwIsxL9hO9ALRgApKDpYM/BqYqO5ipXkrzQmCmp6kCyCWE0FAiO0q+icb1apKw/Mg8WsitRc=";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDiDAmUUduNzC5QWUAZ6rKxDd1R9OP62C5Z26Z2srO56rBCaqslH53OPggFTdeTue0OS6++NMdcr9N+1JfgJbYBp4m8O7S/x7RaJwh4dCc9KT/Yq/ZYBsiN9EYY/dL7hZZuOGJdxSbabIwj0/iw1sVAdMFDga8iMCfucR2xD1uTY4ZhsM4V7nN5xa3gAuI2Vc1U6plIS9i5eFiZLQlvlOA4FqE7zRVCoCp/Mk/24aOP1XtuJGE+S//46ASl1/9GXIGGhU7oBm+nbz99+h8teGw6NUhAhks9QMAiidWaJ8n8L8Sum3EMkVU67+wbrjGi0U3ut0seCx0OzUFzQ+GTIB7boR1G6AIEk6U7VHKjdfjv2Y78oNUq8q3AtmRN5ku60MR3A3Zj1riq6JTF00HNrOzpCR7VMtQTyrdlQvQA4kTBv+wiY+phaM+F6QD0PIg5GNZtbwgM0oCULRa5BVLsLsHpR9sRxbyxsFdI/0ISbx9WHLHuNkLDV1ba7uQFKTfdyuew==";
     </script>
     
     <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
