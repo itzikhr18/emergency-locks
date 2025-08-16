@@ -355,27 +355,36 @@
             // requests. Failure to use `no-cors` would result in the browser
             // blocking the submission.
 
-            const googleFormUrl = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLScIZr153_KNGOdmnkhV_aegJy5Bv0fzG2af6aQjXsT22_MSCg/formResponse';
-            const formDataToGoogle = new FormData();
-            // map our form fields to the Google Form entry IDs
-            formDataToGoogle.append('entry.1771807924', orderData.name || '');          // שם מלא
-            formDataToGoogle.append('entry.2023413093', orderData.phone || '');         // טלפון
-            // The Google Form asks for "עיר" (city); we provide the full address here
-            // so you can later extract the city or keep the complete address
-            formDataToGoogle.append('entry.2083279325', orderData.address || '');       // כתובת / עיר
-            formDataToGoogle.append('entry.876460503', orderData.service || '');        // סוג שירות
-            formDataToGoogle.append('entry.1090959066', orderData.urgency || '');       // דחיפות
-            formDataToGoogle.append('entry.1207658997', orderData.description || '');   // הערות / תיאור
+            
+// The public URL for submitting responses to your Google Form.
+// Note: do not include the `/u/0/` segment so that the form can
+// accept anonymous submissions.
+const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScIZr153_KNGOdmnkhV_aegJy5Bv0fzG2af6aQjXsT22_MSCg/formResponse';
+// Build a URL-encoded payload instead of a FormData object. Google Forms
+// responds more reliably when data is encoded as application/x-www-form-urlencoded.
+const formParams = new URLSearchParams();
+formParams.append('entry.1771807924', orderData.name || '');          // שם מלא
+formParams.append('entry.2023413093', orderData.phone || '');         // טלפון
+// The Google Form asks for "עיר" (city); we provide the full address here
+formParams.append('entry.2083279325', orderData.address || '');       // כתובת / עיר
+formParams.append('entry.876460503', orderData.service || '');        // סוג שירות
+formParams.append('entry.1090959066', orderData.urgency || '');       // דחיפות
+formParams.append('entry.1207658997', orderData.description || '');   // הערות / תיאור
 
-            // Send the data to Google Form. There is no response body because we
-            // use no-cors mode; errors are logged to the console.
-            fetch(googleFormUrl, {
-                method: 'POST',
-                mode: 'no-cors',
-                body: formDataToGoogle
-            }).catch((error) => {
-                console.error('Error submitting to Google Form', error);
-            });
+// Submit the form data via POST. We set mode to 'no-cors' because
+// Google Forms does not include CORS headers. The Content-Type header
+// ensures the payload is interpreted correctly.
+fetch(googleFormUrl, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: formParams.toString()
+}).catch((error) => {
+    console.error('Error submitting to Google Form', error);
+});
+
 
             // Create WhatsApp message
             const message = `🔐 הזמנה חדשה מ-Emergency Locks!
