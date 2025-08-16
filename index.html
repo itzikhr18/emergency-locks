@@ -1,3 +1,4 @@
+<!-- patched -->
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -210,73 +211,21 @@
             </div>
         </div>
 
-        <!-- Order Form -->
-        <div class="glass-effect rounded-2xl p-8 mb-12">
-            <h2 class="text-2xl font-bold text-center mb-6 gradient-text">הזמן שירות עכשיו</h2>
-            <p class="text-center text-gray-300 mb-8">מלא פרטים ונחזור אליך תוך 3 דקות</p>
-            
-            <form id="orderForm" class="max-w-2xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-4 mb-4">
-                    <div>
-                        <label class="block text-yellow-400 font-semibold mb-2">שם מלא:</label>
-                        <input type="text" name="name" required class="w-full p-3 rounded-lg bg-gray-800 border border-gray-600 text-white focus:border-yellow-400 focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-yellow-400 font-semibold mb-2">טלפון:</label>
-                        <input type="tel" name="phone" required class="w-full p-3 rounded-lg bg-gray-800 border border-gray-600 text-white focus:border-yellow-400 focus:outline-none">
-                    </div>
-                </div>
-                
-                <div class="mb-4">
-                    <label class="block text-yellow-400 font-semibold mb-2">כתובת מדויקת:</label>
-                    <input type="text" name="address" required class="w-full p-3 rounded-lg bg-gray-800 border border-gray-600 text-white focus:border-yellow-400 focus:outline-none">
-                </div>
-                
-                <div class="grid md:grid-cols-2 gap-4 mb-4">
-                    <div>
-                        <label class="block text-yellow-400 font-semibold mb-2">סוג השירות:</label>
-                        <select name="service" required class="w-full p-3 rounded-lg bg-gray-800 border border-gray-600 text-white focus:border-yellow-400 focus:outline-none">
-                            <option value="">בחר שירות</option>
-                            <option value="פתיחת דלת">🚪 פתיחת דלת - 180₪</option>
-                            <option value="החלפת מנעול">🔧 החלפת מנעול - 320₪</option>
-                            <option value="שכפול מפתחות">🔑 שכפול מפתחות - 25₪</option>
-                            <option value="מערכת נעילה">🏠 מערכת נעילה - 450₪</option>
-                            <option value="כספת">🏦 שירותי כספות - 400₪</option>
-                            <option value="רכב">🚗 שירותי רכב - 250₪</option>
-                            <option value="אחר">❓ אחר - תיאום מחיר</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-yellow-400 font-semibold mb-2">דחיפות:</label>
-                        <select name="urgency" required class="w-full p-3 rounded-lg bg-gray-800 border border-gray-600 text-white focus:border-yellow-400 focus:outline-none">
-                            <option value="">בחר דחיפות</option>
-                            <option value="חירום">🚨 חירום - עכשיו!</option>
-                            <option value="דחוף">⚡ דחוף - תוך שעתיים</option>
-                            <option value="רגיל">📅 רגיל - היום</option>
-                            <option value="תיאום">📞 תיאום מראש</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="mb-6">
-                    <label class="block text-yellow-400 font-semibold mb-2">תיאור הבעיה:</label>
-                    <textarea name="description" rows="3" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-600 text-white focus:border-yellow-400 focus:outline-none" placeholder="תאר בקצרה מה קרה..."></textarea>
-                </div>
-                
-                <button type="submit" class="w-full bg-gradient-to-r from-yellow-400 to-yellow-600 text-gray-900 font-bold py-4 px-6 rounded-lg hover:from-yellow-500 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105">
-                    <i class="fas fa-paper-plane mr-2"></i>
-                    שלח בקשה והזמן מנעולן
-                </button>
-            </form>
-            
-            <div id="successMessage" class="hidden bg-green-600 text-white p-6 rounded-lg mt-6 text-center success-fade">
-                <div class="text-3xl mb-2">✅</div>
-                <h3 class="text-xl font-bold mb-2">הבקשה נשלחה בהצלחה!</h3>
-                <p>המנעולן יחזור אליך תוך 3-5 דקות לתיאום הגעה</p>
-            </div>
-        </div>
-
-        <!-- Reviews -->
+        <!-- Lead Form -->
+<div class="glass-effect rounded-2xl p-8 mb-12">
+    <h2 class="text-2xl font-bold text-center mb-6 gradient-text">השאר פרטים ונחזור אליך</h2>
+    <p class="text-center text-gray-300 mb-8">מלא את הטופס הבא כדי שנוכל לחזור אליך במהירות</p>
+    <!-- Embed Google Form directly so responses are stored in Google Sheets. -->
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScIZr153_KNGOdmnkhV_aegJy5Bv0fzG2af6aQjXsT22_MSCg/viewform?embedded=true" width="100%" height="1200" frameborder="0" marginheight="0" marginwidth="0">טוען...</iframe>
+    <!-- Add a button for contacting via WhatsApp after filling the form -->
+    <div class="text-center mt-6">
+        <a href="https://wa.me/972527237064" target="_blank" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold inline-flex items-center gap-2">
+            <i class="fab fa-whatsapp"></i>
+            שלח הודעה ב‑WhatsApp
+        </a>
+    </div>
+</div>
+<!-- Reviews -->
         <div class="glass-effect rounded-2xl p-8 mb-12">
             <h3 class="text-2xl font-bold text-center mb-8 gradient-text">מה הלקוחות אומרים</h3>
             
@@ -333,98 +282,7 @@
         </footer>
     </div>
 
-    <script>
-        document.getElementById('orderForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            const orderData = {};
-            for (let [key, value] of formData.entries()) {
-                orderData[key] = value;
-            }
-            
-            // Show success message
-            document.getElementById('successMessage').classList.remove('hidden');
-            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
-            
-            // Submit the form data to the connected Google Form so it is recorded in
-            // the accompanying Google Sheets. We construct a new FormData object
-            // using the special `entry.<id>` field names extracted from the
-            // Google Form. This POST request uses `mode: 'no-cors'` because
-            // Google Forms does not return CORS headers for cross‑origin
-            // requests. Failure to use `no-cors` would result in the browser
-            // blocking the submission.
-
-            
-// The public URL for submitting responses to your Google Form.
-// Note: do not include the `/u/0/` segment so that the form can
-// accept anonymous submissions.
-const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScIZr153_KNGOdmnkhV_aegJy5Bv0fzG2af6aQjXsT22_MSCg/formResponse';
-// Build a URL-encoded payload instead of a FormData object. Google Forms
-// responds more reliably when data is encoded as application/x-www-form-urlencoded.
-const formParams = new URLSearchParams();
-formParams.append('entry.1771807924', orderData.name || '');          // שם מלא
-formParams.append('entry.2023413093', orderData.phone || '');         // טלפון
-// The Google Form asks for "עיר" (city); we provide the full address here
-formParams.append('entry.2083279325', orderData.address || '');       // כתובת / עיר
-formParams.append('entry.876460503', orderData.service || '');        // סוג שירות
-formParams.append('entry.1090959066', orderData.urgency || '');       // דחיפות
-formParams.append('entry.1207658997', orderData.description || '');   // הערות / תיאור
-
-// Submit the form data via POST. We set mode to 'no-cors' because
-// Google Forms does not include CORS headers. The Content-Type header
-// ensures the payload is interpreted correctly.
-fetch(googleFormUrl, {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-    },
-    body: formParams.toString()
-}).catch((error) => {
-    console.error('Error submitting to Google Form', error);
-});
-
-
-            // Create WhatsApp message
-            const message = `🔐 הזמנה חדשה מ-Emergency Locks!
-
-👤 שם: ${orderData.name}
-📱 טלפון: ${orderData.phone}
-📍 כתובת: ${orderData.address}
-🔧 שירות: ${orderData.service}
-⏰ דחיפות: ${orderData.urgency}
-📝 תיאור: ${orderData.description}
-
----
-נשלח מ: emergency-locks.com
-זמן: ${new Date().toLocaleString('he-IL')}`;
-            
-            // Send to WhatsApp
-            const whatsappUrl = `https://wa.me/972527237064?text=${encodeURIComponent(message)}`;
-            
-            setTimeout(() => {
-                window.open(whatsappUrl, '_blank');
-            }, 2000);
-            
-            // Reset form after 10 seconds
-            setTimeout(() => {
-                this.reset();
-                document.getElementById('successMessage').classList.add('hidden');
-            }, 10000);
-        });
-        
-        // Phone number formatting
-        document.querySelector('input[name="phone"]').addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, '');
-            if (value.length > 0) {
-                if (value.length <= 10) {
-                    value = value.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
-                }
-                e.target.value = value;
-            }
-        });
-    </script>
+    
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"96f3e1401e64693f","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.8.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
 </body>
 </html>
