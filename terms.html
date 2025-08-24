@@ -1,22 +1,365 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>תנאי שימוש – Emergency Locks</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תנאי שימוש - SecureKey פלטפורמת תיווך מנעולנות</title>
+    <meta name="description" content="תנאי שימוש מפורטים לפלטפורמת התיווך SecureKey בין לקוחות למנעולנים מקצועיים">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Heebo', sans-serif;
+            line-height: 1.7;
+        }
+        .content-section {
+            margin-bottom: 2rem;
+        }
+        .section-title {
+            color: #1e40af;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border-right: 4px solid #3b82f6;
+            padding-right: 1rem;
+        }
+        .subsection {
+            margin-bottom: 1.5rem;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-right: 4px solid #3b82f6;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-right: 4px solid #f59e0b;
+        }
+    </style>
 </head>
-<body class="min-h-screen bg-gray-50 text-gray-900">
-  <main class="max-w-3xl mx-auto p-6">
-    <h1 class="text-3xl font-bold mb-4">תנאי שימוש</h1>
-    <p class="mb-4">השימוש באתר מיועד להגשת פנייה לקבלת שירותי מנעולנות. שליחת הטופס מהווה הסכמה ליצירת קשר.</p>
-    <h2 class="text-xl font-bold mt-6 mb-2">הגבלת אחריות</h2>
-    <p class="mb-4">האתר מספק תיאום שירות. האחריות לביצוע העבודה, המחיר והזמנים היא על נותן השירות בפועל.</p>
-    <h2 class="text-xl font-bold mt-6 mb-2">מחירים ותמחור</h2>
-    <p class="mb-4">המחירים המוצגים הם “החל מ-” ועשויים להשתנות לפי סוג התקלה, מרחק, זמן וכד'.</p>
-    <h2 class="text-xl font-bold mt-6 mb-2">שינויים בתנאים</h2>
-    <p class="mb-8">אנו רשאים לעדכן תנאים אלה מעת לעת. העדכון ייכנס לתוקף עם פרסומו באתר.</p>
-    <a href="index.html" class="text-blue-600 underline">חזרה לדף הבית</a>
-  </main>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b">
+        <div class="max-w-4xl mx-auto px-6 py-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <i class="fas fa-shield-alt text-blue-600 text-2xl"></i>
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-900">תנאי שימוש</h1>
+                        <p class="text-gray-600">SecureKey - פלטפורמת תיווך מנעולנות</p>
+                    </div>
+                </div>
+                <a href="javascript:history.back()" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                    <i class="fas fa-arrow-right ml-2"></i>
+                    חזרה לאתר
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-6 py-8">
+        
+        <!-- Introduction -->
+        <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+            <div class="highlight-box p-6 rounded-lg mb-6">
+                <h2 class="text-xl font-semibold text-blue-800 mb-4">
+                    <i class="fas fa-info-circle ml-2"></i>
+                    מבוא חשוב
+                </h2>
+                <p class="text-gray-700">
+                    ברוכים הבאים לפלטפורמת <strong>SecureKey</strong>. אנו מספקים שירותי תיווך בין לקוחות הזקוקים לשירותי מנעולנות לבין מנעולנים מקצועיים ומאומתים. 
+                    השימוש באתר ובשירותים מהווה הסכמה מלאה לתנאים המפורטים להלן.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6 text-sm text-gray-600">
+                <div class="flex items-center">
+                    <i class="fas fa-calendar-alt text-blue-500 ml-3"></i>
+                    <span><strong>תאריך עדכון אחרון:</strong> ינואר 2024</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-gavel text-blue-500 ml-3"></i>
+                    <span><strong>תחולה:</strong> דין מדינת ישראל</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 1: Definitions -->
+        <section class="content-section bg-white rounded-lg shadow-sm p-8">
+            <h2 class="section-title text-xl">1. הגדרות וביאורים</h2>
+            <div class="space-y-4">
+                <div class="subsection">
+                    <p><strong>"החברה"/"אנחנו":</strong> SecureKey, פלטפורמת תיווך מנעולנות המפעילה אתר זה.</p>
+                    <p><strong>"לקוח"/"אתה":</strong> כל אדם או גוף המשתמש בשירותי הפלטפורמה.</p>
+                    <p><strong>"מנעולן":</strong> נותן שירות מקצועי עצמאי בתחום המנעולנות המחובר לפלטפורמה.</p>
+                    <p><strong>"השירות":</strong> שירותי התיווך וההתאמה המסופקים דרך הפלטפורמה.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Service Description -->
+        <section class="content-section bg-white rounded-lg shadow-sm p-8">
+            <h2 class="section-title text-xl">2. תיאור השירות</h2>
+            <div class="subsection">
+                <p class="mb-4">SecureKey מספקת פלטפורמת תיווך המקשרת בין:</p>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 mr-6">
+                    <li>לקוחות הזקוקים לשירותי מנעולנות (פריצת דלתות, החלפת מנעולים, שכפול מפתחות ועוד)</li>
+                    <li>מנעולנים מקצועיים ומאומתים הפעילים באזורים שונים בישראל</li>
+                </ul>
+                <div class="warning-box p-4 rounded-lg mt-6">
+                    <p class="font-semibold text-amber-800">
+                        <i class="fas fa-exclamation-triangle ml-2"></i>
+                        הבהרה חשובה
+                    </p>
+                    <p class="text-amber-700 mt-2">
+                        SecureKey אינה מספקת שירותי מנעולנות ישירות. אנו משמשים כפלטפורמת תיווך בלבד. 
+                        השירות המקצועי מסופק ישירות על ידי המנעולן העצמאי.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: User Responsibilities -->
+        <section class="content-section bg-white rounded-lg shadow-sm p-8">
+            <h2 class="section-title text-xl">3. התחייבויות הלקוח</h2>
+            <div class="space-y-4">
+                <div class="subsection">
+                    <h3 class="font-semibold text-gray-800 mb-3">3.1 מתן מידע נכון ומדויק</h3>
+                    <p>הלקוח מתחייב למסור מידע נכון, מדויק ומלא בכל הנוגע לפרטיו האישיים, כתובת השירות ותיאור הבעיה.</p>
+                </div>
+                
+                <div class="subsection">
+                    <h3 class="font-semibold text-gray-800 mb-3">3.2 זכויות חוקיות</h3>
+                    <p>הלקוח מצהיר כי הוא בעל הזכויות החוקיות לנכס בו מתבקש השירות, או שהוא מורשה על ידי הבעלים לקבל שירות זה.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="font-semibold text-gray-800 mb-3">3.3 שיתוף פעולה עם המנעולן</h3>
+                    <p>הלקוח מתחייב לשתף פעולה עם המנעולן, להיות נגיש בזמן המוסכם ולספק את הפרטים הנדרשים לביצוע השירות.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Service Process -->
+        <section class="content-section bg-white rounded-lg shadow-sm p-8">
+            <h2 class="section-title text-xl">4. תהליך מתן השירות</h2>
+            <div class="space-y-4">
+                <div class="subsection">
+                    <h3 class="font-semibold text-gray-800 mb-3">4.1 בקשת שירות</h3>
+                    <p>הלקוח יגיש בקשה דרך האתר, וואטסאפ או טלפון עם פרטי הבעיה והמיקום.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="font-semibold text-gray-800 mb-3">4.2 התאמת מנעולן</h3>
+                    <p>SecureKey תאמת מנעולן זמין באזור הרלוונטי ותעבור אליו את פרטי הלקוח.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="font-semibold text-gray-800 mb-3">4.3 קשר ישיר</h3>
+                    <p>המנעולן ייצור קשר ישיר עם הלקוח לתיאום מחיר, זמן הגעה ופרטי השירות.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="font-semibold text-gray-800 mb-3">4.4 ביצוע השירות</h3>
+                    <p>השירות מבוצע ישירות על ידי המנעולן העצמאי ללא מעורבות נוספת של SecureKey.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Pricing and Payment -->
+        <section class="content-section bg-white rounded-lg shadow-sm p-8">
+            <h2 class="section-title text-xl">5. תמחור ותשלום</h2>
+            <div class="space-y-4">
+                <div class="subsection">
+                    <h3 class="font-semibold text-gray-800 mb-3">5.1 שירותי התיווך</h3>
+                    <p>שירותי התיווך של SecureKey ניתנים ללא עלות ישירה מהלקוח.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="font-semibold text-gray-800 mb-3">5.2 תשלום למנעולן</h3>
+                    <p>התשלום עבור שירותי המנעולנות מתבצע ישירות למנעולן לפי המחיר המוסכם ביניהם.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="font-semibold text-gray-800 mb-3">5.3 שקיפות מחירים</h3>
+                    <p>המחירים המוצגים באתר הם טווחים כלליים לצורך מידע בלבד. המחיר הסופי נקבע בין הלקוח למנעולן.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Liability Limitations -->
+        <section class="content-section bg-white rounded-lg shadow-sm p-8">
+            <h2 class="section-title text-xl">6. הגבלת אחריות</h2>
+            <div class="warning-box p-6 rounded-lg mb-6">
+                <h3 class="font-semibold text-amber-800 mb-3">
+                    <i class="fas fa-shield-alt ml-2"></i>
+                    הגבלות אחריות חשובות
+                </h3>
+                <p class="text-amber-700">
+                    SecureKey משמשת כפלטפורמת תיווך בלבד ואינה נושאת באחריות לשירותים המקצועיים המסופקים על ידי המנעולנים.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="subsection">
+                    <h3 class="font-semibold text-gray-800 mb-3">6.1 אחריות המנעולן</h3>
+                    <p>האחריות המלאה לביצוע השירות, איכותו, בטיחותו ותוצאותיו חלה על המנעולן העצמאי בלבד.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="font-semibold text-gray-800 mb-3">6.2 נזקים</h3>
+                    <p>SecureKey לא תישא באחריות לכל נזק ישיר או עקיף הנגרם כתוצאה משירותי המנעולן, לרבות נזקי רכוש, פגיעה אישית או הפסד כלכלי.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="font-semibold text-gray-800 mb-3">6.3 מחלוקות</h3>
+                    <p>מחלוקות הנוגעות לאיכות השירות, מחיר או נזקים ייפתרו ישירות בין הלקוח למנעולן.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="font-semibold text-gray-800 mb-3">6.4 זמינות השירות</h3>
+                    <p>אין אחריות לזמינות מנעולן באזור מסוים או בזמן מבוקש. SecureKey תעשה מאמץ סביר לאתר מנעולן זמין.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Quality Assurance -->
+        <section class="content-section bg-white rounded-lg shadow-sm p-8">
+            <h2 class="section-title text-xl">7. בקרה ואיכות</h2>
+            <div class="space-y-4">
+                <div class="subsection">
+                    <h3 class="font-semibold text-gray-800 mb-3">7.1 בדיקת מנעולנים</h3>
+                    <p>SecureKey עושה מאמצים לוודא כי המנעולנים המחוברים לפלטפורמה הם מקצועיים ובעלי ניסיון.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="font-semibold text-gray-800 mb-3">7.2 איסוף משוב</h3>
+                    <p>אנו מעודדים לקוחות לספק משוב על השירות לצורך שיפור מתמיד של הפלטפורמה.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="font-semibold text-gray-800 mb-3">7.3 הסרת מנעולנים</h3>
+                    <p>SecureKey שומרת על הזכות להסיר מנעולנים מהפלטפורמה במקרה של תלונות חוזרות או התנהגות לא הולמת.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8: Privacy and Data -->
+        <section class="content-section bg-white rounded-lg shadow-sm p-8">
+            <h2 class="section-title text-xl">8. פרטיות ומידע אישי</h2>
+            <div class="space-y-4">
+                <div class="subsection">
+                    <h3 class="font-semibold text-gray-800 mb-3">8.1 איסוף מידע</h3>
+                    <p>אנו אוספים מידע אישי הדרוש לצורך מתן שירותי התיווך, לרבות שם, טלפון, כתובת ותיאור הבעיה.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="font-semibold text-gray-800 mb-3">8.2 העברת מידע למנעולנים</h3>
+                    <p>המידע האישי יועבר למנעולן הרלוונטי לצורך מתן השירות. המנעולן מתחייב לשמור על סודיות המידע.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="font-semibold text-gray-800 mb-3">8.3 מדיניות פרטיות</h3>
+                    <p>לפרטים נוספים אודות טיפול במידע אישי, עיינו במדיניות הפרטיות שלנו.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 9: Intellectual Property -->
+        <section class="content-section bg-white rounded-lg shadow-sm p-8">
+            <h2 class="section-title text-xl">9. קניין רוחני</h2>
+            <div class="space-y-4">
+                <div class="subsection">
+                    <h3 class="font-semibold text-gray-800 mb-3">9.1 זכויות יוצרים</h3>
+                    <p>כל התוכן באתר, לרבות טקסטים, תמונות, לוגו ועיצוב, הוא קניינה הרוחני של SecureKey ומוגן בזכויות יוצרים.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="font-semibold text-gray-800 mb-3">9.2 איסור העתקה</h3>
+                    <p>אסור להעתיק, לשכפל או להפיץ תוכן מהאתר ללא אישור מראש ובכתב.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 10: Changes and Updates -->
+        <section class="content-section bg-white rounded-lg shadow-sm p-8">
+            <h2 class="section-title text-xl">10. שינויים ועדכונים</h2>
+            <div class="space-y-4">
+                <div class="subsection">
+                    <h3 class="font-semibold text-gray-800 mb-3">10.1 זכות לשינוי</h3>
+                    <p>SecureKey שומרת על הזכות לעדכן תנאים אלה מעת לעת. שינויים יפורסמו באתר עם תאריך העדכון.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="font-semibold text-gray-800 mb-3">10.2 הודעה על שינויים</h3>
+                    <p>שינויים מהותיים יובאו לידיעת המשתמשים באמצעות האתר או דרכי התקשורת הרגילות.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="font-semibold text-gray-800 mb-3">10.3 המשך שימוש</h3>
+                    <p>המשך השימוש באתר לאחר פרסום שינויים מהווה הסכמה לתנאים המעודכנים.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 11: Termination -->
+        <section class="content-section bg-white rounded-lg shadow-sm p-8">
+            <h2 class="section-title text-xl">11. הפסקת שירות</h2>
+            <div class="space-y-4">
+                <div class="subsection">
+                    <h3 class="font-semibold text-gray-800 mb-3">11.1 הפסקה על ידי הלקוח</h3>
+                    <p>הלקוח רשאי להפסיק את השימוש בשירות בכל עת ללא הודעה מוקדמת.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="font-semibold text-gray-800 mb-3">11.2 הפסקה על ידי SecureKey</h3>
+                    <p>SecureKey רשאית להפסיק מתן שירות למשתמש במקרה של הפרת תנאים אלה או שימוש לא הולם בפלטפורמה.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 12: Applicable Law -->
+        <section class="content-section bg-white rounded-lg shadow-sm p-8">
+            <h2 class="section-title text-xl">12. דין חל וסמכות שיפוט</h2>
+            <div class="subsection">
+                <p><strong>12.1 דין חל:</strong> על תנאים אלה יחול הדין הישראלי בלבד.</p>
+                <p><strong>12.2 סמכות שיפוט:</strong> בכל מחלוקת הנובעת מתנאים אלה, הסמכות הבלעדית תהיה לבתי המשפט המוסמכים בישראל.</p>
+                <p><strong>12.3 שפה:</strong> במקרה של סתירה בין גרסאות בשפות שונות, הגרסה העברית תגבר.</p>
+            </div>
+        </section>
+
+        <!-- Section 13: Contact -->
+        <section class="content-section bg-white rounded-lg shadow-sm p-8">
+            <h2 class="section-title text-xl">13. יצירת קשר</h2>
+            <div class="highlight-box p-6 rounded-lg">
+                <p class="mb-4">לשאלות, הבהרות או תלונות בנוגע לתנאי השימוש:</p>
+                <div class="space-y-2">
+                    <p><i class="fas fa-phone text-blue-600 ml-2"></i><strong>טלפון:</strong> 052-723-7064</p>
+                    <p><i class="fab fa-whatsapp text-green-600 ml-2"></i><strong>וואטסאפ:</strong> 052-723-7064</p>
+                    <p><i class="fas fa-globe text-blue-600 ml-2"></i><strong>אתר:</strong> SecureKey.co.il</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-100 rounded-lg p-6 mt-8 text-center text-sm text-gray-600">
+            <p class="mb-4">
+                <i class="fas fa-calendar-alt text-gray-400 ml-2"></i>
+                תנאי שימוש אלה עודכנו לאחרונה בתאריך: <strong>ינואר 2024</strong>
+            </p>
+            <p class="text-xs">
+                © 2024 SecureKey - פלטפורמת תיווך מנעולנות. כל הזכויות שמורות.
+            </p>
+        </footer>
+    </main>
 </body>
 </html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDlYvhS9CvuGYHo%2BVaSikx6GdUhNIZI%2FHGiIxCfeLa3zIuGJI6u2nCDph55CrYjXgeVhrmcxEbqH2ToIm92uOg5EVz45zjVaIP7pr%2FLs%2B661c9wQmI5xQSEfsv5fM6j8iVzyUcjHZUxUXqB65WyDHP21M7uvQ6gn1bruzEFeLjjpZ6wXGYs5BX%2FSTrqL8djVzVR1tgUxG0FVm%2B9mHcHkhxfa9fxdVSzKWz0GMv6fFY2Z1bXU0ViWwE8%2FvMNwl%2FrDGc5dZ6sDhXrrRelyVuuWpb5V2SEXdbNtfKRlywdNEvk4nj9hGbGyXh0YoLZp%2F%2BKRQ2EV%2B%2F%2BnjZQ2uFEO5Q1G32sziqw95h4aNWpJBmru9Pno6P%2FSuGP0n2kn3rXL8Lltd9RUy2LGNLYTZ09qStfg%2Fvi%2F8wfKlLJUCB%2FIomd73IPqnFHqTrDBHzl9i6facNTWYgPJnLqs5SsczwPT1xo%2FPpfoyFOXwXIJzPvYRwZIozpw85Ro81YAzwGIKnvVXeyNLuiDEIZhhilcDr9jKYyNm4lI%3D";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDlYvhS9CvuGYHo+VaSikx6GdUhNIZI/HGiIxCfeLa3zIuGJI6u2nCDph55CrYjXgeVhrmcxEbqH2ToIm92uOg5EVz45zjVaIP7pr/Ls+661c9wQmI5xQSEfsv5fM6j8iVzyUcjHZUxUXqB65WyDHP21M7uvQ6gn1bruzEFeLjjpZ6wXGYs5BX/STrqL8djVzVR1tgUxG0FVm+9mHcHkhxfa9fxdVSzKWz0GMv6fFY2Z1bXU0ViWwE8/vMNwl/rDGc5dZ6sDhXrrRelyVuuWpb5V2SEXdbNtfKRlywdNEvk4nj9hGbGyXh0YoLZp/+KRQ2EV+/+njZQ2uFEO5Q1G32sziqw95h4aNWpJBmru9Pno6P/SuGP0n2kn3rXL8Lltd9RUy2LGNLYTZ09qStfg/vi/8wfKlLJUCB/Iomd73IPqnFHqTrDBHzl9i6facNTWYgPJnLqs5SsczwPT1xo/PpfoyFOXwXIJzPvYRwZIozpw85Ro81YAzwGIKnvVXeyNLuiDEIZhhilcDr9jKYyNm4lI=";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    

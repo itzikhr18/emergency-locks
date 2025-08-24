@@ -1,27 +1,471 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>מדיניות פרטיות – Emergency Locks</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מדיניות פרטיות - SecureKey פלטפורמת תיווך מנעולנות</title>
+    <meta name="description" content="מדיניות פרטיות של SecureKey - פלטפורמת תיווך מנעולנות. מותאמת לחוק הגנת הפרטיות הישראלי ומתאימה לצרכי התיווך בין לקוחות למנעולנים מקצועיים.">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            font-family: 'Heebo', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .content-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .section-title {
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .privacy-section {
+            border-right: 4px solid #3b82f6;
+            transition: all 0.3s ease;
+        }
+        
+        .privacy-section:hover {
+            border-right-color: #1e40af;
+            background: rgba(59, 130, 246, 0.05);
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(30, 64, 175, 0.1));
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            border-radius: 12px;
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, #10b981, #059669);
+            border-radius: 15px;
+            color: white;
+        }
+        
+        .back-link {
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: linear-gradient(135deg, #1e40af, #1e3a8a);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
+        }
+        
+        ul li {
+            position: relative;
+            padding-right: 1.5rem;
+        }
+        
+        ul li::before {
+            content: "•";
+            color: #3b82f6;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+            font-size: 1.2em;
+        }
+        
+        .numbered-list {
+            counter-reset: section-counter;
+        }
+        
+        .numbered-list li {
+            counter-increment: section-counter;
+            padding-right: 2rem;
+        }
+        
+        .numbered-list li::before {
+            content: counter(section-counter) ".";
+            color: #3b82f6;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+            font-size: 1.1em;
+        }
+    </style>
 </head>
-<body class="min-h-screen bg-gray-50 text-gray-900">
-  <main class="max-w-3xl mx-auto p-6">
-    <h1 class="text-3xl font-bold mb-4">מדיניות פרטיות</h1>
-    <p class="mb-4">אנו מכבדים את פרטיות המשתמשים. מידע שנאסף בטופס (שם, טלפון, עיר, סוג שירות, דחיפות והערות) נועד לצורך מתן השירות בלבד.</p>
-    <h2 class="text-xl font-bold mt-6 mb-2">איזה מידע אנו אוספים?</h2>
-    <ul class="list-disc pr-6 space-y-1">
-      <li>פרטי התקשרות שמולאו בטופס</li>
-      <li>פרטי דפדפן/מכשיר, מקור הפנייה וכתובת IP (לצורכי אבטחה ואיכות שירות)</li>
-    </ul>
-    <h2 class="text-xl font-bold mt-6 mb-2">איך אנו משתמשים במידע?</h2>
-    <p class="mb-4">למטרת קבלת הפנייה, יצירת קשר ומתן שירות. ייתכן ונשתף את המידע עם מנעולן/נותן שירות רלוונטי בלבד.</p>
-    <h2 class="text-xl font-bold mt-6 mb-2">אבטחת מידע ושמירה</h2>
-    <p class="mb-4">המידע נשמר בגוגל שיטס/מערכת פנימית ומוגן באמצעים סבירים. נשמור את המידע כל עוד יש צורך תפעולי/משפטי.</p>
-    <h2 class="text-xl font-bold mt-6 mb-2">פנייה בנושא פרטיות</h2>
-    <p class="mb-8">לבקשות לעיון/עדכון/מחיקה: 📞 052-723-7064</p>
-    <a href="index.html" class="text-blue-600 underline">חזרה לדף הבית</a>
-  </main>
+<body>
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <div class="inline-flex items-center gap-3 bg-white rounded-full px-6 py-3 shadow-lg mb-4">
+                <i class="fas fa-shield-alt text-2xl text-blue-600"></i>
+                <span class="text-xl font-bold text-gray-800">SecureKey</span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content-container p-8">
+            <!-- Title Section -->
+            <div class="text-center mb-10">
+                <h1 class="text-4xl font-bold section-title mb-4">מדיניות פרטיות</h1>
+                <p class="text-lg text-gray-600">עדכון אחרון: ינואר 2024</p>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-blue-800 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Introduction -->
+            <div class="highlight-box p-6 mb-8">
+                <div class="flex items-center gap-3 mb-4">
+                    <i class="fas fa-info-circle text-2xl text-blue-600"></i>
+                    <h2 class="text-xl font-bold text-gray-800">הקדמה</h2>
+                </div>
+                <p class="text-gray-700 leading-relaxed">
+                    ב-<strong>SecureKey</strong> אנו מחויבים לשמור על פרטיותכם ולהגן על המידע האישי שלכם. מדיניות פרטיות זו מסבירה כיצד אנו אוספים, משתמשים ומגינים על המידע שלכם כאשר אתם משתמשים בפלטפורמת התיווך שלנו למציאת שירותי מנעולנות.
+                </p>
+            </div>
+
+            <!-- Section 1: Who We Are -->
+            <div class="privacy-section pr-6 py-6 mb-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3">
+                    <i class="fas fa-building text-blue-600"></i>
+                    1. מי אנחנו
+                </h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    SecureKey היא פלטפורמת תיווך דיגיטלית המחברת בין לקוחות הזקוקים לשירותי מנעולנות לבין מנעולנים מקצועיים ומאומתים. אנו משמשים כגשר טכנולוגי בלבד ואיננו מספקים את השירותים הפיזיים בעצמנו.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                    <strong>פרטי החברה:</strong> SecureKey Ltd., רח' הטכנולוגיה 123, תל אביב, ישראל
+                </p>
+            </div>
+
+            <!-- Section 2: Information We Collect -->
+            <div class="privacy-section pr-6 py-6 mb-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3">
+                    <i class="fas fa-database text-blue-600"></i>
+                    2. איזה מידע אנו אוספים
+                </h2>
+                
+                <h3 class="text-lg font-semibold text-gray-800 mb-3">מידע שאתם מספקים לנו:</h3>
+                <ul class="text-gray-700 leading-relaxed mb-6 space-y-2">
+                    <li><strong>פרטים אישיים:</strong> שם מלא, מספר טלפון, כתובת אימייל</li>
+                    <li><strong>פרטי מיקום:</strong> כתובת מלאה לצורך התאמת מנעולן באזור</li>
+                    <li><strong>פרטי השירות:</strong> תיאור הבעיה, רמת דחיפות, העדפות מחיר</li>
+                    <li><strong>מידע תקשורתי:</strong> הודעות וואטסאפ, שיחות טלפון למעקב שירות</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-gray-800 mb-3">מידע שנאסף אוטומטית:</h3>
+                <ul class="text-gray-700 leading-relaxed space-y-2">
+                    <li><strong>מידע טכני:</strong> כתובת IP, סוג דפדפן, מערכת הפעלה</li>
+                    <li><strong>עוגיות (Cookies):</strong> למעקב חוויית משתמש ושיפור השירות</li>
+                    <li><strong>נתוני שימוש:</strong> זמן ביקור באתר, דפים שנצפו, פעולות שבוצעו</li>
+                    <li><strong>מידע מכשיר:</strong> רזולוציית מסך, שפה, אזור זמן</li>
+                </ul>
+            </div>
+
+            <!-- Section 3: How We Use Information -->
+            <div class="privacy-section pr-6 py-6 mb-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3">
+                    <i class="fas fa-cogs text-blue-600"></i>
+                    3. כיצד אנו משתמשים במידע
+                </h2>
+                
+                <ol class="numbered-list text-gray-700 leading-relaxed space-y-3">
+                    <li><strong>מתן שירותי התיווך:</strong> התאמה בין לקוחות למנעולנים מתאימים באזור</li>
+                    <li><strong>תיאום ומעקב:</strong> העברת פרטיכם למנעולן המתאים וביצוע מעקב שירות</li>
+                    <li><strong>שיפור השירות:</strong> ניתוח נתוני שימוש לשיפור חוויית המשתמש</li>
+                    <li><strong>תמיכה ושירות לקוחות:</strong> מענה לפניות, פתרון בעיות וסיוע טכני</li>
+                    <li><strong>אבטחה ומניעת הונאות:</strong> זיהוי חשבונות מזויפים ומניעת שימוש לרעה</li>
+                    <li><strong>דרישות חוקיות:</strong> עמידה בחובות דיווח והליכים משפטיים</li>
+                    <li><strong>שיווק (באישורכם):</strong> שליחת עדכונים על שירותים חדשים וטיפים לאבטחה</li>
+                </ol>
+            </div>
+
+            <!-- Section 4: Information Sharing -->
+            <div class="privacy-section pr-6 py-6 mb-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3">
+                    <i class="fas fa-share-alt text-blue-600"></i>
+                    4. עם מי אנו משתפים את המידע
+                </h2>
+                
+                <div class="bg-yellow-50 border-r-4 border-yellow-400 p-4 mb-4">
+                    <div class="flex items-center gap-2 mb-2">
+                        <i class="fas fa-exclamation-triangle text-yellow-600"></i>
+                        <span class="font-semibold text-yellow-800">חשוב לדעת:</span>
+                    </div>
+                    <p class="text-yellow-800">אנו לא מוכרים או משכירים את המידע האישי שלכם לצדדים שלישיים למטרות מסחריות.</p>
+                </div>
+
+                <h3 class="text-lg font-semibold text-gray-800 mb-3">משתפים מידע רק במקרים הבאים:</h3>
+                <ul class="text-gray-700 leading-relaxed space-y-2">
+                    <li><strong>מנעולנים מאומתים:</strong> פרטי הזמנה הכרחיים לביצוע השירות</li>
+                    <li><strong>ספקי שירות טכניים:</strong> אחסון בענן, שליחת הודעות, עיבוד תשלומים</li>
+                    <li><strong>רשויות חוק:</strong> על פי דרישה חוקית או צו בית משפט</li>
+                    <li><strong>מטרות ביטחוניות:</strong> למניעת פעילות פלילית או הגנה על זכויותינו</li>
+                    <li><strong>העסקה עסקית:</strong> במקרה של מיזוג, רכישה או מכירת החברה</li>
+                </ul>
+            </div>
+
+            <!-- Section 5: Data Security -->
+            <div class="privacy-section pr-6 py-6 mb-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3">
+                    <i class="fas fa-lock text-blue-600"></i>
+                    5. אבטחת המידע
+                </h2>
+                
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    אנו נוקטים אמצעים טכניים וארגוניים מתקדמים להגנה על המידע שלכם:
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                        <h4 class="font-semibold text-blue-800 mb-2 flex items-center gap-2">
+                            <i class="fas fa-server"></i>
+                            אמצעים טכניים
+                        </h4>
+                        <ul class="text-sm text-blue-700 space-y-1">
+                            <li>הצפנת SSL/TLS לכל העברות הנתונים</li>
+                            <li>שרתים מאובטחים עם מוניטורינג 24/7</li>
+                            <li>גיבויים מוצפנים ובדיקות אבטחה תקופתיות</li>
+                            <li>הגנה מפני התקפות סייבר</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                        <h4 class="font-semibold text-green-800 mb-2 flex items-center gap-2">
+                            <i class="fas fa-users-cog"></i>
+                            אמצעים ארגוניים
+                        </h4>
+                        <ul class="text-sm text-green-700 space-y-1">
+                            <li>הדרכות אבטחה לכל העובדים</li>
+                            <li>גישה מוגבלת למידע על בסיס צורך לדעת</li>
+                            <li>חתימה על הסכמי סודיות</li>
+                            <li>ביקורות אבטחה תקופתיות</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 6: Data Retention -->
+            <div class="privacy-section pr-6 py-6 mb-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3">
+                    <i class="fas fa-calendar-alt text-blue-600"></i>
+                    6. תקופת שמירת המידע
+                </h2>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse border border-gray-300 rounded-lg overflow-hidden">
+                        <thead>
+                            <tr class="bg-blue-600 text-white">
+                                <th class="border border-gray-300 p-3 text-right">סוג המידע</th>
+                                <th class="border border-gray-300 p-3 text-right">תקופת שמירה</th>
+                                <th class="border border-gray-300 p-3 text-right">סיבה</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-700">
+                            <tr class="bg-gray-50">
+                                <td class="border border-gray-300 p-3">פרטי הזמנות פעילות</td>
+                                <td class="border border-gray-300 p-3">עד השלמת השירות + 30 יום</td>
+                                <td class="border border-gray-300 p-3">מעקב שירות ותמיכה</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 p-3">רשומות תקשורת</td>
+                                <td class="border border-gray-300 p-3">12 חודשים</td>
+                                <td class="border border-gray-300 p-3">שירות לקוחות וטיפול בתלונות</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="border border-gray-300 p-3">נתוני שימוש באתר</td>
+                                <td class="border border-gray-300 p-3">24 חודשים</td>
+                                <td class="border border-gray-300 p-3">שיפור השירות וניתוח מגמות</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 p-3">מידע חשבונאי/משפטי</td>
+                                <td class="border border-gray-300 p-3">7 שנים</td>
+                                <td class="border border-gray-300 p-3">דרישות חוקיות ומיסוי</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Section 7: User Rights -->
+            <div class="privacy-section pr-6 py-6 mb-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3">
+                    <i class="fas fa-user-shield text-blue-600"></i>
+                    7. הזכויות שלכם
+                </h2>
+                
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    בהתאם לחוק הגנת הפרטיות הישראלי, יש לכם את הזכויות הבאות:
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                        <h4 class="font-semibold text-purple-800 mb-3 flex items-center gap-2">
+                            <i class="fas fa-eye"></i>
+                            זכויות צפייה ועדכון
+                        </h4>
+                        <ul class="text-sm text-purple-700 space-y-2">
+                            <li><strong>עיון במידע:</strong> לקבל עותק מהמידע ששמור עליכם</li>
+                            <li><strong>תיקון מידע:</strong> לתקן מידע שגוי או לא מעודכן</li>
+                            <li><strong>השלמת מידע:</strong> להוסיף מידע חסר</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                        <h4 class="font-semibold text-red-800 mb-3 flex items-center gap-2">
+                            <i class="fas fa-trash"></i>
+                            זכויות מחיקה והגבלה
+                        </h4>
+                        <ul class="text-sm text-red-700 space-y-2">
+                            <li><strong>מחיקת מידע:</strong> למחוק מידע כשאין צורך חוקי לשמרו</li>
+                            <li><strong>הגבלת שימוש:</strong> להגביל עיבוד המידע למקרים מסוימים</li>
+                            <li><strong>ביטול הסכמה:</strong> לבטל הסכמה לעיבוד מסוים</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-blue-50 p-4 rounded-lg border border-blue-200 mt-4">
+                    <h4 class="font-semibold text-blue-800 mb-2 flex items-center gap-2">
+                        <i class="fas fa-phone"></i>
+                        איך מממשים את הזכויות?
+                    </h4>
+                    <p class="text-blue-700 text-sm">
+                        לממש את הזכויות שלכם, צרו קשר איתנו בטלפון <a href="tel:0527237064" class="underline">0527237064</a> 
+                        או בוואטסאפ. נענה לפנייתכם תוך 30 יום.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Section 8: Cookies -->
+            <div class="privacy-section pr-6 py-6 mb-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3">
+                    <i class="fas fa-cookie-bite text-blue-600"></i>
+                    8. שימוש בעוגיות (Cookies)
+                </h2>
+                
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    האתר שלנו משתמש בעוגיות לשיפור חוויית הגלישה שלכם:
+                </p>
+
+                <div class="space-y-3">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-cog text-blue-600 mt-1"></i>
+                        <div>
+                            <strong class="text-gray-800">עוגיות פונקציונליות:</strong>
+                            <span class="text-gray-700"> שמירת העדפות שפה, זכירת טופס שמולא חלקית</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-chart-line text-blue-600 mt-1"></i>
+                        <div>
+                            <strong class="text-gray-800">עוגיות אנליטיות:</strong>
+                            <span class="text-gray-700"> מעקב תנועה באתר לשיפור השירות (Google Analytics)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-ad text-blue-600 mt-1"></i>
+                        <div>
+                            <strong class="text-gray-800">עוגיות שיווקיות:</strong>
+                            <span class="text-gray-700"> רק באישורכם המפורש לתצוגת פרסומות מותאמות</span>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-sm text-gray-600 mt-4 bg-gray-50 p-3 rounded-lg">
+                    <i class="fas fa-info-circle text-blue-600 ml-2"></i>
+                    ניתן לחסום עוגיות בהגדרות הדפדפן, אך זה עלול להשפיע על פונקציונליות האתר.
+                </p>
+            </div>
+
+            <!-- Section 9: Updates -->
+            <div class="privacy-section pr-6 py-6 mb-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3">
+                    <i class="fas fa-sync-alt text-blue-600"></i>
+                    9. עדכוני מדיניות
+                </h2>
+                
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    אנו עשויים לעדכן מדיניות פרטיות זו מעת לעת כדי לשקף שינויים בשירותינו או בדרישות החוקיות. 
+                    עדכונים מהותיים יפורסמו באתר עם הודעה מוקדמת של 30 יום.
+                </p>
+
+                <div class="bg-green-50 border border-green-200 p-4 rounded-lg">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-bell text-green-600"></i>
+                        <div>
+                            <strong class="text-green-800">המלצה:</strong>
+                            <span class="text-green-700"> עקבו אחר עדכוני המדיניות בכל פעם שאתם משתמשים בשירות.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 10: Contact -->
+            <div class="contact-info p-6 mb-8">
+                <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                    <i class="fas fa-envelope"></i>
+                    10. יצירת קשר בנושאי פרטיות
+                </h2>
+                
+                <p class="text-green-100 leading-relaxed mb-4">
+                    יש לכם שאלות על מדיניות הפרטיות או רוצים לממש את הזכויות שלכם? אנחנו כאן לעזור:
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="flex items-center gap-3 text-white">
+                        <i class="fas fa-phone-alt text-xl"></i>
+                        <div>
+                            <div class="font-semibold">טלפון</div>
+                            <a href="tel:0527237064" class="text-green-100 hover:text-white">0527237064</a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center gap-3 text-white">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        <div>
+                            <div class="font-semibold">וואטסאפ</div>
+                            <a href="https://wa.me/972527237064" class="text-green-100 hover:text-white" target="_blank">לחצו לשליחת הודעה</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 pt-4 border-t border-green-400">
+                    <p class="text-green-100 text-sm">
+                        <strong>זמני מענה:</strong> ראשון-חמישי 8:00-18:00, מענה מהיר בוואטסאפ גם בסופי שבוע
+                    </p>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="text-center pt-6 border-t border-gray-200">
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="text-sm text-gray-600">
+                        © 2024 SecureKey Ltd. כל הזכויות שמורות
+                    </div>
+                    
+                    <a href="https://bsvcykpb.gensparkspace.com/" class="back-link text-white px-6 py-2 rounded-full text-sm font-medium inline-flex items-center gap-2">
+                        <i class="fas fa-arrow-right"></i>
+                        חזרה לאתר הראשי
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDr5fXVaDIMWczAMB4lKvmfyQuhNxBFtKjKlrc7IqmOE5KNWN7AcYAvKqCJPeMt2PnReATZwZH17AZBa74PdtIRRzB4wZJvvhouVEnIxnDs4wmavxmLlKxrmnGvaTXC9KTcJ%2FuW5%2FNtm5QCt841txlfIyULT3sZIus1sKC9IJhP9hIgSLUR2Y6XXNx%2Fx4LMfpro4%2F4t8g%2BBcsh4xDCa6hwbIy8MmhT5wtykW9zM7EzwdzYch94aHtXSU2bLo%2Bw23SaPuG0kA%2BMAaDdaRno2rLZYtFmxm4x6QAnLCbBZ6kiRrHm41Zuu4%2B5fxo9fqThCvblomIcL0wAd7mxpuR%2FkjCrahkxgz48onHs2UCDJ9hDO5zMYpkjGTNOWr1MXAvHAw86RAeUMPXXkSX0JeOlStOaq9ArMgBtKoI9qUCVH1JTYxjv89UpYCeB09aCt%2FAoabSqkYIZzZ56WD1u0PaZy6N7VWkfyvTMJ42TXoxZQoqHrm62gclKgtwwziCBCb8FyYt3Q%3D%3D";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDr5fXVaDIMWczAMB4lKvmfyQuhNxBFtKjKlrc7IqmOE5KNWN7AcYAvKqCJPeMt2PnReATZwZH17AZBa74PdtIRRzB4wZJvvhouVEnIxnDs4wmavxmLlKxrmnGvaTXC9KTcJ/uW5/Ntm5QCt841txlfIyULT3sZIus1sKC9IJhP9hIgSLUR2Y6XXNx/x4LMfpro4/4t8g+Bcsh4xDCa6hwbIy8MmhT5wtykW9zM7EzwdzYch94aHtXSU2bLo+w23SaPuG0kA+MAaDdaRno2rLZYtFmxm4x6QAnLCbBZ6kiRrHm41Zuu4+5fxo9fqThCvblomIcL0wAd7mxpuR/kjCrahkxgz48onHs2UCDJ9hDO5zMYpkjGTNOWr1MXAvHAw86RAeUMPXXkSX0JeOlStOaq9ArMgBtKoI9qUCVH1JTYxjv89UpYCeB09aCt/AoabSqkYIZzZ56WD1u0PaZy6N7VWkfyvTMJ42TXoxZQoqHrm62gclKgtwwziCBCb8FyYt3Q==";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    
