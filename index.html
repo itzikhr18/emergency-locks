@@ -536,13 +536,49 @@
             </div>
             
             <div class="max-w-2xl mx-auto">
+                <!-- טופס יצירת לידים מותאם אישית -->
                 <div id="contact-form" class="glass-bg rounded-3xl p-8">
-                    <!-- Embedded Google Form -->
-                    <!-- הטמעת טופס Google כפי שסופק ע"י המשתמש. רוחב 100% מאפשר התאמה לרוחב המכשיר -->
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf9C4tzNkQ22RkgyLGIxTuD0o9QyBxr0rON38w-UGp0XwA7aw/viewform?embedded=true"
-                            width="100%" height="1257" frameborder="0" marginheight="0" marginwidth="0">
-                        בטעינה…
-                    </iframe>
+                    <form id="leadForm" class="space-y-4">
+                        <!-- שם מלא -->
+                        <div>
+                            <label for="name" class="block text-gray-800 mb-2 font-medium">שם מלא</label>
+                            <input type="text" id="name" name="name" placeholder="הכנס/י את שמך" class="form-input w-full p-3 rounded-lg" required>
+                        </div>
+                        <!-- טלפון נייד -->
+                        <div>
+                            <label for="phone" class="block text-gray-800 mb-2 font-medium">טלפון נייד</label>
+                            <input type="tel" id="phone" name="phone" placeholder="05X-XXXXXXX" class="form-input w-full p-3 rounded-lg" required pattern="^05[0-9]{8}$" title="מספר טלפון ישראלי תקין (05XXXXXXXX)">
+                        </div>
+                        <!-- כתובת מלאה -->
+                        <div>
+                            <label for="address" class="block text-gray-800 mb-2 font-medium">כתובת מלאה</label>
+                            <input type="text" id="address" name="address" placeholder="רחוב, מספר בית, עיר" class="form-input w-full p-3 rounded-lg" required>
+                        </div>
+                        <!-- תיאור הבעיה -->
+                        <div>
+                            <label for="problem" class="block text-gray-800 mb-2 font-medium">מה הבעיה?</label>
+                            <textarea id="problem" name="problem" rows="4" placeholder="ספר/י בקצרה על הבעיה" class="form-input w-full p-3 rounded-lg" required></textarea>
+                        </div>
+                        <!-- רמת דחיפות -->
+                        <div>
+                            <label for="urgency" class="block text-gray-800 mb-2 font-medium">רמת דחיפות</label>
+                            <select id="urgency" name="urgency" class="form-input w-full p-3 rounded-lg" required>
+                                <option value="" disabled selected>בחר/י את רמת הדחיפות</option>
+                                <option value="מיידי – דחוף מאוד">מיידי – דחוף מאוד</option>
+                                <option value="היום – בהקדם">היום – בהקדם</option>
+                                <option value="גמיש – לא דחוף">גמיש – לא דחוף</option>
+                            </select>
+                        </div>
+                        <!-- הסכמה לתקשורת -->
+                        <div class="flex items-center">
+                            <input type="checkbox" id="agreement" name="agreement" class="mr-2" required>
+                            <label for="agreement" class="text-gray-700">אני מאשר/ת יצירת קשר ותיאום מנעולן</label>
+                        </div>
+                        <!-- כפתור שליחה -->
+                        <div>
+                            <button type="submit" class="btn-primary w-full py-3 rounded-lg text-lg font-semibold">שלח/י פרטים</button>
+                        </div>
+                    </form>
                 </div>
                 
                 <!-- CTAs נוספים -->
@@ -630,50 +666,46 @@
     </footer>
 
     <script>
-        // טופס ווטסאפ
-        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const address = document.getElementById('address').value;
-            const problem = document.getElementById('problem').value;
-            const urgency = document.getElementById('urgency').value;
-            
-            // ולידציה בסיסית
-            if (!name || !phone || !address || !problem || !urgency) {
-                alert('אנא מלא את כל השדות הנדרשים');
-                return;
-            }
-            
-            // ולידציה לטלפון ישראלי
-            const phoneRegex = /^05[0-9]{8}$/;
-            if (!phoneRegex.test(phone)) {
-                alert('אנא הכנס מספר טלפון נייד ישראלי תקין (05X-XXX-XXXX)');
-                return;
-            }
-            
-            // יצירת הודעת וואטסאפ
-            const message = `🔐 בקשה חדשה מ-SecureKey
-
-👤 שם: ${name}
-📍 כתובת: ${address}  
-📞 טלפון: ${phone}
-🔧 בעיה: ${problem}
-⏰ דחיפות: ${urgency}
-
-שליחה דרך: securekey.co.il`;
-            
-            // קידוד ההודעה לURL
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappURL = `https://wa.me/972527237064?text=${encodedMessage}`;
-            
-            // פתיחת וואטסאפ
-            window.open(whatsappURL, '_blank');
-            
-            // הודעת תודה
-            alert('תודה! נפתח עכשיו וואטסאפ עם ההודעה מוכנה לשליחה.');
-        });
+        // שליחת פרטי הטופס לגיליון דרך Apps Script (Web App)
+        (function() {
+            // כתובת ה-Web App שנוצרה ב‑Apps Script לשליחת הנתונים לטופס
+            const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbz8y6P_DpZ9uHn4c8IBwCDOGfsxxC4A46jrsz0Zm6ob30hUCz3jc_aAXNM7cv7yEq-gFw/exec';
+            const leadForm = document.getElementById('leadForm');
+            leadForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const formData = {
+                    name: leadForm.name.value.trim(),
+                    phone: leadForm.phone.value.trim(),
+                    address: leadForm.address.value.trim(),
+                    problem: leadForm.problem.value.trim(),
+                    urgency: leadForm.urgency.value,
+                    agreement: leadForm.agreement.checked
+                };
+                // ולידציה בסיסית
+                if (!formData.name || !formData.phone || !formData.address || !formData.problem || !formData.urgency || !formData.agreement) {
+                    alert('אנא מלא/י את כל השדות והסימון הדרושים.');
+                    return;
+                }
+                const phoneRegex = /^05[0-9]{8}$/;
+                if (!phoneRegex.test(formData.phone)) {
+                    alert('אנא הכנס/י מספר טלפון נייד ישראלי תקין (05XXXXXXXX).');
+                    return;
+                }
+                try {
+                    const response = await fetch(WEB_APP_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(formData)
+                    });
+                    // גם אם התשובה מגיעה במצב no-cors, נניח הצלחה
+                    alert('תודה! פנייתך התקבלה, נחזור אליך בקרוב.');
+                    leadForm.reset();
+                } catch (error) {
+                    console.error('Error submitting form:', error);
+                    alert('אירעה שגיאה בשליחת הטופס. נסה/י שוב מאוחר יותר.');
+                }
+            });
+        })();
 
         // מעבר חלק בין קטעים
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
