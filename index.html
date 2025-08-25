@@ -693,14 +693,23 @@
                     return;
                 }
                 try {
-                    // Use no‑cors mode to avoid CORS errors when calling the Apps Script Web App.
-                    const response = await fetch(WEB_APP_URL, {
-                        method: 'POST',
-                        mode: 'no-cors',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(formData)
+                    /*
+                     * שליחת הנתונים מתבצעת כבקשת GET עם פרמטרים ב‑URL כדי לעקוף את מגבלות CORS.
+                     *  אנו משרשרים את ערכי הטופס למחרוזת שאילתא בעזרת URLSearchParams.
+                     *  באמצעות מצב no‑cors ניתן לבצע את הבקשה ללא בדיקת מקור (preflight).
+                     */
+                    const params = new URLSearchParams({
+                        name: formData.name,
+                        phone: formData.phone,
+                        address: formData.address,
+                        problem: formData.problem,
+                        urgency: formData.urgency,
+                        // המרת הערך הבוליאני של האישור למחרוזת כדי להקל על עיבוד בגוגל Apps Script
+                        agreement: formData.agreement ? 'Yes' : 'No'
                     });
-                    // גם אם התשובה מגיעה במצב no-cors, נניח הצלחה
+                    const requestUrl = `${WEB_APP_URL}?${params.toString()}`;
+                    await fetch(requestUrl, { method: 'GET', mode: 'no-cors' });
+                    // גם אם התשובה מגיעה במצב no‑cors, נניח הצלחה
                     alert('תודה! פנייתך התקבלה, נחזור אליך בקרוב.');
                     leadForm.reset();
                 } catch (error) {
