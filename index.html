@@ -29,7 +29,6 @@
             height: 100%;
             background-image: url('https://page.gensparksite.com/v1/base64_upload/1d2bf8919e4bf5d6b8e6a1625a1add87');
             background-size: cover;
- 
             background-position: center;
             background-repeat: no-repeat;
             opacity: 0.15;
@@ -61,8 +60,7 @@
         }
         
         .btn-secondary {
-            b
-                ackground: linear-gradient(135deg, #4caf50, #45a049);
+            background: linear-gradient(135deg, #4caf50, #45a049);
             color: white;
             transition: all 0.3s ease;
         }
@@ -671,7 +669,8 @@
         // שליחת פרטי הטופס לגיליון דרך Apps Script (Web App)
         (function() {
             // כתובת ה-Web App שנוצרה ב‑Apps Script לשליחת הנתונים לטופס
-            const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbz8y6P_DpZ9uHn4c8IBwCDOGfsxxC4A46jrsz0Zm6ob30hUCz3jc_aAXNM7cv7yEq-gFw/exec';
+            // כתובת ה‑Web App החדשה שנוצרה ב‑Apps Script לאחר הוספת doGet
+            const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwGNqSVX0khLyZCaEg_DJAtEyzcBw_QQ_ebX5_PnQ1IAwexBN01PvhBmQbR51wGtQ6Gw/exec';
             const leadForm = document.getElementById('leadForm');
             leadForm.addEventListener('submit', async function(e) {
                 e.preventDefault();
