@@ -692,8 +692,10 @@
                     return;
                 }
                 try {
+                    // Use no‑cors mode to avoid CORS errors when calling the Apps Script Web App.
                     const response = await fetch(WEB_APP_URL, {
                         method: 'POST',
+                        mode: 'no-cors',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(formData)
                     });
