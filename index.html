@@ -132,6 +132,9 @@
         .form-input:focus {
             border-color: #1976d2;
             box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+
+      }
+  }
         }
         
         .section-divider {
@@ -148,7 +151,20 @@
                 font-size: 20px;
             }
         }
-    </style>
+/* Mobile background fix */
+  html, body {
+    min-height: 100vh;
+  }
+
+  @media (max-width: 1024px) {
+    body {
+        background-attachment: scroll;
+    }
+}
+}
+        </style>
+
+</style>
 </head>
 <body>
     <!-- כפתור וואטסאפ קבוע -->
