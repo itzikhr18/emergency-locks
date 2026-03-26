@@ -15,14 +15,24 @@
         }
         
         body {
-            background: linear-gradient(160deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%);
-            background-attachment: fixed;
+            background: #ffffff;
+            color: #1e293b;
         }
-        
-        .glass-bg {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+
+        .hero-section {
+            background: linear-gradient(160deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%);
+        }
+
+        .section-light {
+            background: #ffffff;
+        }
+
+        .section-gray {
+            background: #f8fafc;
+        }
+
+        .section-dark {
+            background: linear-gradient(160deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%);
         }
         
         .gradient-text {
@@ -79,9 +89,9 @@
         }
         
         .sticky-header {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.95);
-            border-bottom: 1px solid rgba(25, 118, 210, 0.1);
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
         }
         
         .whatsapp-float {
@@ -184,11 +194,6 @@
             display: block;
         }
 
-  @media (max-width: 1024px) {
-    body {
-        background-attachment: scroll;
-    }
-  }
         </style>
 </head>
 <body>
@@ -268,7 +273,7 @@
     </div>
 
     <!-- גיבור הדף -->
-    <section class="pt-24 pb-16 min-h-screen flex items-center">
+    <section class="hero-section pt-24 pb-16 min-h-screen flex items-center">
         <div class="container mx-auto px-4">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <!-- תוכן טקסט -->
@@ -318,9 +323,9 @@
     </section>
 
     <!-- איך זה עובד -->
-    <section id="how-it-works" class="py-16">
+    <section id="how-it-works" class="section-gray py-16">
         <div class="container mx-auto px-4">
-            <div class="glass-bg rounded-3xl p-8 lg:p-12">
+            <div class="p-8 lg:p-12">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl lg:text-4xl font-bold gradient-text mb-4">איך זה עובד?</h2>
                     <div class="section-divider mb-6"></div>
@@ -357,17 +362,17 @@
     </section>
 
     <!-- שירותים עיקריים -->
-    <section id="services" class="py-16">
+    <section id="services" class="section-light py-16">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">השירותים שלנו</h2>
+                <h2 class="text-3xl lg:text-4xl font-bold gradient-text mb-4">השירותים שלנו</h2>
                 <div class="section-divider mb-6"></div>
-                <p class="text-lg text-gray-200">כל שירותי המנעולנות במקום אחד</p>
+                <p class="text-lg text-gray-600">כל שירותי המנעולנות במקום אחד</p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- פריצת דלתות -->
-                <div class="service-card glass-bg p-6 rounded-2xl text-center">
+                <div class="service-card bg-white shadow-md p-6 rounded-2xl text-center">
                     <img src="https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?w=600&q=80" alt="פריצת דלתות" class="w-full h-48 object-cover rounded-lg mb-4">
                     <h3 class="text-lg font-semibold mb-2">פריצת דלתות</h3>
                     <p class="text-gray-600 text-sm">פריצת דלת טרוקה/נעולה ללא נזק</p>
@@ -375,7 +380,7 @@
                 </div>
                 
                 <!-- החלפת צילינדרים -->
-                <div class="service-card glass-bg p-6 rounded-2xl text-center">
+                <div class="service-card bg-white shadow-md p-6 rounded-2xl text-center">
                     <img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=600&q=80" alt="מנעולים חכמים" class="w-full h-48 object-cover rounded-lg mb-4">
                     <h3 class="text-lg font-semibold mb-2">מנעולים חכמים</h3>
                     <p class="text-gray-600 text-sm">החלפת צילינדרים (סטנדרטי/מתקדם)</p>
@@ -383,7 +388,7 @@
                 </div>
                 
                 <!-- פריצת רכבים -->
-                <div class="service-card glass-bg p-6 rounded-2xl text-center">
+                <div class="service-card bg-white shadow-md p-6 rounded-2xl text-center">
                     <img src="https://images.unsplash.com/photo-1449965408869-ebd3fee7710d?w=600&q=80" alt="פריצת רכבים" class="w-full h-48 object-cover rounded-lg mb-4">
                     <h3 class="text-lg font-semibold mb-2">פריצת רכבים</h3>
                     <p class="text-gray-600 text-sm">פריצת רכבים ללא נזק (כולל מפתחות נעולים ברכב)</p>
@@ -391,7 +396,7 @@
                 </div>
                 
                 <!-- כספות -->
-                <div class="service-card glass-bg p-6 rounded-2xl text-center">
+                <div class="service-card bg-white shadow-md p-6 rounded-2xl text-center">
                     <img src="https://images.unsplash.com/photo-1582139329536-e7284fece509?w=600&q=80" alt="שירותי כספות" class="w-full h-48 object-cover rounded-lg mb-4">
                     <h3 class="text-lg font-semibold mb-2">שירותי כספות</h3>
                     <p class="text-gray-600 text-sm">כספות: פתיחה, כיוון, התקנה</p>
@@ -399,7 +404,7 @@
                 </div>
                 
                 <!-- שכפול שלטים -->
-                <div class="service-card glass-bg p-6 rounded-2xl text-center md:col-span-2 lg:col-span-4">
+                <div class="service-card bg-white shadow-md p-6 rounded-2xl text-center md:col-span-2 lg:col-span-4">
                     <div class="flex flex-col md:flex-row items-center gap-6">
                         <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&q=80" alt="שכפול מפתחות לרכב" class="w-full md:w-1/3 h-48 object-cover rounded-lg">
                         <div class="text-center md:text-right flex-1">
@@ -417,15 +422,15 @@
             </div>
             
             <div class="text-center mt-8">
-                <p class="text-gray-200 font-medium">SecureKey מספקת תיווך לכל שירותי המנעולנות המקובלים – בהתאמה לצורך שלך</p>
+                <p class="text-gray-600 font-medium">SecureKey מספקת תיווך לכל שירותי המנעולנות המקובלים – בהתאמה לצורך שלך</p>
             </div>
         </div>
     </section>
 
     <!-- מחירון שקוף -->
-    <section id="pricing" class="py-16">
+    <section id="pricing" class="section-gray py-16">
         <div class="container mx-auto px-4">
-            <div class="glass-bg rounded-3xl p-8 lg:p-12">
+            <div class="bg-white rounded-3xl shadow-lg p-8 lg:p-12">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl lg:text-4xl font-bold gradient-text mb-4">מחירון שקוף</h2>
                     <div class="section-divider mb-6"></div>
@@ -504,17 +509,17 @@
     </section>
 
     <!-- חוות דעת -->
-    <section id="testimonials" class="py-16">
+    <section id="testimonials" class="section-light py-16">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">מה אומרים הלקוחות</h2>
+                <h2 class="text-3xl lg:text-4xl font-bold gradient-text mb-4">מה אומרים הלקוחות</h2>
                 <div class="section-divider mb-6"></div>
-                <p class="text-lg text-gray-200">חוות דעת אמיתיות מלקוחות מרוצים</p>
+                <p class="text-lg text-gray-600">חוות דעת אמיתיות מלקוחות מרוצים</p>
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- חוות דעת 1 -->
-                <div class="testimonial-card glass-bg p-6 rounded-2xl text-center">
+                <div class="testimonial-card bg-white shadow-md p-6 rounded-2xl text-center">
                     <div class="avatar-initials" style="background: linear-gradient(135deg, #1976d2, #1565c0);">ד״כ</div>
                     <h4 class="font-semibold mb-2">דוד כהן, תל אביב</h4>
                     <div class="text-yellow-400 mb-3">
@@ -531,7 +536,7 @@
                 </div>
                 
                 <!-- חוות דעת 2 -->
-                <div class="testimonial-card glass-bg p-6 rounded-2xl text-center">
+                <div class="testimonial-card bg-white shadow-md p-6 rounded-2xl text-center">
                     <div class="avatar-initials" style="background: linear-gradient(135deg, #4caf50, #388e3c);">ש״ל</div>
                     <h4 class="font-semibold mb-2">שרה לוי, ירושלים</h4>
                     <div class="text-yellow-400 mb-3">
@@ -548,7 +553,7 @@
                 </div>
                 
                 <!-- חוות דעת 3 -->
-                <div class="testimonial-card glass-bg p-6 rounded-2xl text-center">
+                <div class="testimonial-card bg-white shadow-md p-6 rounded-2xl text-center">
                     <div class="avatar-initials" style="background: linear-gradient(135deg, #ff9800, #f57c00);">מ״י</div>
                     <h4 class="font-semibold mb-2">מיכל ישראלי, חיפה</h4>
                     <div class="text-yellow-400 mb-3">
@@ -568,9 +573,9 @@
     </section>
 
     <!-- שאלות נפוצות -->
-    <section id="faq" class="py-16">
+    <section id="faq" class="section-gray py-16">
         <div class="container mx-auto px-4">
-            <div class="glass-bg rounded-3xl p-8 lg:p-12">
+            <div class="bg-white rounded-3xl shadow-lg p-8 lg:p-12">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl lg:text-4xl font-bold gradient-text mb-4">שאלות נפוצות</h2>
                     <div class="section-divider mb-6"></div>
@@ -608,17 +613,17 @@
     </section>
 
     <!-- טופס יצירת קשר -->
-    <section id="contact" class="py-16">
+    <section id="contact" class="section-dark py-16">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">צריכים מנעולן עכשיו?</h2>
                 <div class="section-divider mb-6"></div>
-                <p class="text-lg text-gray-200">מלאו פרטים ונחזור אליכם מיד</p>
+                <p class="text-lg text-gray-300">מלאו פרטים ונחזור אליכם מיד</p>
             </div>
-            
+
             <div class="max-w-2xl mx-auto">
                 <!-- טופס יצירת לידים מותאם אישית -->
-                <div id="contact-form" class="glass-bg rounded-3xl p-8">
+                <div id="contact-form" class="bg-white rounded-3xl shadow-lg p-8">
                     <form id="leadForm" class="space-y-4">
                         <!-- שם מלא -->
                         <div>
@@ -680,9 +685,9 @@
     </section>
 
     <!-- פוטר -->
-    <footer class="py-12 border-t border-gray-700">
+    <footer class="py-12 bg-gray-50 border-t border-gray-200">
         <div class="container mx-auto px-4">
-            <div class="glass-bg rounded-3xl p-8">
+            <div class="p-8">
                 <div class="grid md:grid-cols-3 gap-8 items-center">
                     <!-- לוגו ומידע -->
                     <div class="text-center md:text-right">
