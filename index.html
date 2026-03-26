@@ -27,7 +27,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://page.gensparksite.com/v1/base64_upload/1d2bf8919e4bf5d6b8e6a1625a1add87');
+            background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=80');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -132,9 +132,6 @@
         .form-input:focus {
             border-color: #1976d2;
             box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
-
-      }
-  }
         }
         
         .section-divider {
@@ -156,15 +153,59 @@
     min-height: 100vh;
   }
 
+        .avatar-initials {
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin: 0 auto 1rem;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 75%;
+            max-width: 300px;
+            height: 100vh;
+            background: white;
+            z-index: 100;
+            box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+            padding: 2rem 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu.open {
+            display: block;
+        }
+
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 99;
+        }
+
+        .mobile-overlay.open {
+            display: block;
+        }
+
   @media (max-width: 1024px) {
     body {
         background-attachment: scroll;
     }
-}
-}
+  }
         </style>
-
-</style>
 </head>
 <body>
     <!-- כפתור וואטסאפ קבוע -->
@@ -178,9 +219,15 @@
             <div class="flex justify-between items-center">
                 <!-- לוגו -->
                 <div class="flex items-center">
-                    <img src="https://page.gensparksite.com/v1/base64_upload/0117799d78a2725c9371047b286a6f29" alt="SecureKey Locksmiths" class="h-12 w-auto">
+                    <i class="fas fa-key text-blue-600 text-2xl ml-2"></i>
+                    <span class="text-xl font-bold gradient-text">SecureKey</span>
                 </div>
-                
+
+                <!-- כפתור תפריט מובייל -->
+                <button id="menuToggle" class="md:hidden text-gray-700 text-2xl" aria-label="תפריט">
+                    <i class="fas fa-bars"></i>
+                </button>
+
                 <!-- תפריט ניווט -->
                 <nav class="hidden md:flex space-x-8 space-x-reverse">
                     <a href="#pricing" class="text-gray-700 hover:text-blue-600 transition-colors">מחירון</a>
@@ -205,6 +252,36 @@
             </div>
         </div>
     </header>
+
+    <!-- תפריט מובייל -->
+    <div id="mobileOverlay" class="mobile-overlay"></div>
+    <div id="mobileMenu" class="mobile-menu">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center">
+                <i class="fas fa-key text-blue-600 text-xl ml-2"></i>
+                <span class="text-lg font-bold gradient-text">SecureKey</span>
+            </div>
+            <button onclick="document.getElementById('mobileMenu').classList.remove('open');document.getElementById('mobileOverlay').classList.remove('open');" class="text-gray-500 text-2xl" aria-label="סגירת תפריט">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="space-y-4">
+            <a href="#services" class="block text-gray-700 hover:text-blue-600 text-lg py-2 border-b border-gray-100">שירותים</a>
+            <a href="#pricing" class="block text-gray-700 hover:text-blue-600 text-lg py-2 border-b border-gray-100">מחירון</a>
+            <a href="#how-it-works" class="block text-gray-700 hover:text-blue-600 text-lg py-2 border-b border-gray-100">איך זה עובד</a>
+            <a href="#testimonials" class="block text-gray-700 hover:text-blue-600 text-lg py-2 border-b border-gray-100">חוות דעת</a>
+            <a href="#faq" class="block text-gray-700 hover:text-blue-600 text-lg py-2 border-b border-gray-100">שאלות נפוצות</a>
+            <a href="#contact" class="block text-gray-700 hover:text-blue-600 text-lg py-2 border-b border-gray-100">יצירת קשר</a>
+        </nav>
+        <div class="mt-8 space-y-3">
+            <a href="https://wa.me/972527237064" class="btn-secondary w-full py-3 rounded-lg text-center font-medium block">
+                <i class="fab fa-whatsapp ml-2"></i>וואטסאפ
+            </a>
+            <a href="tel:0527237064" class="btn-primary w-full py-3 rounded-lg text-center font-medium block">
+                <i class="fas fa-phone ml-2"></i>שיחה מהירה
+            </a>
+        </div>
+    </div>
 
     <!-- גיבור הדף -->
     <section class="pt-24 pb-16 min-h-screen flex items-center">
@@ -250,7 +327,7 @@
                 
                 <!-- תמונה -->
                 <div class="order-first lg:order-last">
-                    <img src="https://page.gensparksite.com/v1/base64_upload/827c5ffcca3f24ce6497efd0a6580e0e" alt="מנעולן מקצועי בעבודה" class="w-full h-auto rounded-2xl shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="מנעולן מקצועי בעבודה" class="w-full h-auto rounded-2xl shadow-2xl">
                 </div>
             </div>
         </div>
@@ -307,7 +384,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- פריצת דלתות -->
                 <div class="service-card glass-bg p-6 rounded-2xl text-center">
-                    <img src="https://page.gensparksite.com/v1/base64_upload/e724c502d6af590d824f5766a254d296" alt="פריצת דלתות" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80" alt="פריצת דלתות" class="w-full h-48 object-cover rounded-lg mb-4">
                     <h3 class="text-lg font-semibold mb-2">פריצת דלתות</h3>
                     <p class="text-gray-600 text-sm">פריצת דלת טרוקה/נעולה ללא נזק</p>
                     <div class="mt-3 text-blue-600 text-xs font-medium">ללא נזק • זמינות גבוהה</div>
@@ -315,7 +392,7 @@
                 
                 <!-- החלפת צילינדרים -->
                 <div class="service-card glass-bg p-6 rounded-2xl text-center">
-                    <img src="https://page.gensparksite.com/v1/base64_upload/f6d0a813f1802fcd7cb1d9702540bfac" alt="מנעולים חכמים" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <img src="https://images.unsplash.com/photo-1595079676339-1534801ad6cf?w=600&q=80" alt="מנעולים חכמים" class="w-full h-48 object-cover rounded-lg mb-4">
                     <h3 class="text-lg font-semibold mb-2">מנעולים חכמים</h3>
                     <p class="text-gray-600 text-sm">החלפת צילינדרים (סטנדרטי/מתקדם)</p>
                     <div class="mt-3 text-blue-600 text-xs font-medium">טכנולוגיה מתקדמת • אבטחה גבוהה</div>
@@ -323,7 +400,7 @@
                 
                 <!-- פריצת רכבים -->
                 <div class="service-card glass-bg p-6 rounded-2xl text-center">
-                    <img src="https://page.gensparksite.com/v1/base64_upload/827c5ffcca3f24ce6497efd0a6580e0e" alt="פריצת רכבים" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0afa?w=600&q=80" alt="פריצת רכבים" class="w-full h-48 object-cover rounded-lg mb-4">
                     <h3 class="text-lg font-semibold mb-2">פריצת רכבים</h3>
                     <p class="text-gray-600 text-sm">פריצת רכבים ללא נזק (כולל מפתחות נעולים ברכב)</p>
                     <div class="mt-3 text-blue-600 text-xs font-medium">ללא נזק • מהירות תגובה</div>
@@ -331,7 +408,7 @@
                 
                 <!-- כספות -->
                 <div class="service-card glass-bg p-6 rounded-2xl text-center">
-                    <img src="https://page.gensparksite.com/v1/base64_upload/7a2bb10aa8f9f7d5dd229e49c673e6aa" alt="שירותי כספות" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <img src="https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?w=600&q=80" alt="שירותי כספות" class="w-full h-48 object-cover rounded-lg mb-4">
                     <h3 class="text-lg font-semibold mb-2">שירותי כספות</h3>
                     <p class="text-gray-600 text-sm">כספות: פתיחה, כיוון, התקנה</p>
                     <div class="mt-3 text-blue-600 text-xs font-medium">מומחיות גבוהה • שמירת תכולה</div>
@@ -340,7 +417,7 @@
                 <!-- שכפול שלטים -->
                 <div class="service-card glass-bg p-6 rounded-2xl text-center md:col-span-2 lg:col-span-4">
                     <div class="flex flex-col md:flex-row items-center gap-6">
-                        <img src="https://page.gensparksite.com/v1/base64_upload/ad3f6c23e8eddbda6ee31cfb70de2bf7" alt="שכפול שלטים לרכב" class="w-full md:w-1/3 h-48 object-cover rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&q=80" alt="שכפול שלטים לרכב" class="w-full md:w-1/3 h-48 object-cover rounded-lg">
                         <div class="text-center md:text-right flex-1">
                             <h3 class="text-2xl font-semibold mb-3">שכפול שלטים/מפתחות לרכב במקום</h3>
                             <p class="text-gray-600 mb-4">שירות מקצועי לשכפול וקידוד שלטים לרכב - כולל דגמים מתקדמים וטכנולוגיות חכמות</p>
@@ -368,7 +445,7 @@
                 <div class="text-center mb-12">
                     <h2 class="text-3xl lg:text-4xl font-bold gradient-text mb-4">מחירון שקוף</h2>
                     <div class="section-divider mb-6"></div>
-                    <p class="text-lg text-gray-600">להלן טווחי מחירים מקובלים. המחיר הסופי נקבע לפי סוג הדלת/המנעול/הרכב, מיקום, שעה וסוג התקלה.</p>
+                    <p class="text-lg text-gray-600">להלן טווחי מחירים מקובלים (כולל מע״מ). המחיר הסופי נקבע לפי סוג הדלת/המנעול/הרכב, מיקום, שעה וסוג התקלה.</p>
                 </div>
                 
                 <div class="overflow-x-auto">
@@ -376,53 +453,57 @@
                         <thead>
                             <tr class="border-b-2 border-blue-200">
                                 <th class="py-4 px-4 text-lg font-semibold text-gray-800">שירות</th>
-                                <th class="py-4 px-4 text-lg font-semibold text-gray-800">מחיר (₪, לפני מע״מ)</th>
+                                <th class="py-4 px-4 text-lg font-semibold text-gray-800">מחיר (₪, כולל מע״מ)</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="price-row border-b">
                                 <td class="py-3 px-4 font-medium">דמי ביקור (א׳–ה׳ 8:00–18:00)</td>
-                                <td class="py-3 px-4 text-blue-600 font-semibold">200–300</td>
+                                <td class="py-3 px-4 text-blue-600 font-semibold">235–350</td>
                             </tr>
                             <tr class="price-row border-b">
                                 <td class="py-3 px-4 font-medium">פריצת דלת טרוקה (ללא נזק)</td>
-                                <td class="py-3 px-4 text-blue-600 font-semibold">200–400</td>
+                                <td class="py-3 px-4 text-blue-600 font-semibold">235–470</td>
                             </tr>
                             <tr class="price-row border-b">
                                 <td class="py-3 px-4 font-medium">פריצת דלת + החלפת צילינדר בסיסי</td>
-                                <td class="py-3 px-4 text-blue-600 font-semibold">300–450</td>
+                                <td class="py-3 px-4 text-blue-600 font-semibold">350–530</td>
                             </tr>
                             <tr class="price-row border-b">
                                 <td class="py-3 px-4 font-medium">דלת פלדלת/רב-בריח (כולל צילינדר בסיסי)</td>
-                                <td class="py-3 px-4 text-blue-600 font-semibold">400–700</td>
+                                <td class="py-3 px-4 text-blue-600 font-semibold">470–825</td>
                             </tr>
                             <tr class="price-row border-b">
                                 <td class="py-3 px-4 font-medium">החלפת צילינדר סטנדרטי</td>
-                                <td class="py-3 px-4 text-blue-600 font-semibold">200–600</td>
+                                <td class="py-3 px-4 text-blue-600 font-semibold">235–700</td>
                             </tr>
                             <tr class="price-row border-b">
                                 <td class="py-3 px-4 font-medium">החלפת צילינדר מתקדם/מותג מוביל</td>
-                                <td class="py-3 px-4 text-blue-600 font-semibold">300–600</td>
+                                <td class="py-3 px-4 text-blue-600 font-semibold">350–700</td>
                             </tr>
                             <tr class="price-row border-b">
                                 <td class="py-3 px-4 font-medium">פריצת רכב (ללא נזק)</td>
-                                <td class="py-3 px-4 text-blue-600 font-semibold">250–600</td>
+                                <td class="py-3 px-4 text-blue-600 font-semibold">295–700</td>
                             </tr>
                             <tr class="price-row border-b">
                                 <td class="py-3 px-4 font-medium">שכפול שלט לרכב (סטנדרטי)</td>
-                                <td class="py-3 px-4 text-blue-600 font-semibold">300–600</td>
+                                <td class="py-3 px-4 text-blue-600 font-semibold">350–700</td>
                             </tr>
                             <tr class="price-row border-b">
                                 <td class="py-3 px-4 font-medium">שכפול/קידוד שלט חכם/Keyless</td>
-                                <td class="py-3 px-4 text-blue-600 font-semibold">800–1,500+</td>
+                                <td class="py-3 px-4 text-blue-600 font-semibold">940–1,770+</td>
                             </tr>
                             <tr class="price-row border-b">
                                 <td class="py-3 px-4 font-medium">פתיחת כספת ביתית (בסיסי)</td>
-                                <td class="py-3 px-4 text-blue-600 font-semibold">200–450</td>
+                                <td class="py-3 px-4 text-blue-600 font-semibold">235–530</td>
+                            </tr>
+                            <tr class="price-row border-b">
+                                <td class="py-3 px-4 font-medium">רכב חשמלי/היברידי – פריצה ושכפול</td>
+                                <td class="py-3 px-4 text-blue-600 font-semibold">500–2,500+</td>
                             </tr>
                             <tr class="price-row">
                                 <td class="py-3 px-4 font-medium">תוספת לילה/סופ"ש/חג</td>
-                                <td class="py-3 px-4 text-blue-600 font-semibold">+100–200</td>
+                                <td class="py-3 px-4 text-blue-600 font-semibold">+120–235</td>
                             </tr>
                         </tbody>
                     </table>
@@ -431,7 +512,7 @@
                 <div class="mt-6 p-4 bg-yellow-50 rounded-lg border-r-4 border-yellow-400">
                     <p class="text-sm text-gray-700">
                         <i class="fas fa-info-circle text-yellow-500 ml-2"></i>
-                        <strong>הערה:</strong> בדגמי רכב מתקדמים ובאזורים מסוימים המחיר יכול להיות גבוה יותר. דגמי יוקרה עשויים להגיע עד ~2,000 ₪.
+                        <strong>הערה:</strong> המחירים מעודכנים לשנת 2026 וכוללים מע״מ. ברכבים חשמליים/היברידיים (טסלה, BYD, פולסטאר ועוד) עלות הפריצה והשכפול עשויה להיות גבוהה יותר בשל טכנולוגיה ייחודית. דגמי יוקרה עשויים להגיע עד ~2,500 ₪.
                     </p>
                 </div>
             </div>
@@ -450,7 +531,7 @@
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- חוות דעת 1 -->
                 <div class="testimonial-card glass-bg p-6 rounded-2xl text-center">
-                    <img src="https://page.gensparksite.com/v1/base64_upload/c8164549eda4a6d37e5b9b942bc24592" alt="דוד כהן" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+                    <div class="avatar-initials" style="background: linear-gradient(135deg, #1976d2, #1565c0);">ד״כ</div>
                     <h4 class="font-semibold mb-2">דוד כהן, תל אביב</h4>
                     <div class="text-yellow-400 mb-3">
                         <i class="fas fa-star"></i>
@@ -467,7 +548,7 @@
                 
                 <!-- חוות דעת 2 -->
                 <div class="testimonial-card glass-bg p-6 rounded-2xl text-center">
-                    <img src="https://page.gensparksite.com/v1/base64_upload/5c625dd6b395005b1343ddf0d1932493" alt="שרה לוי" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+                    <div class="avatar-initials" style="background: linear-gradient(135deg, #4caf50, #388e3c);">ש״ל</div>
                     <h4 class="font-semibold mb-2">שרה לוי, ירושלים</h4>
                     <div class="text-yellow-400 mb-3">
                         <i class="fas fa-star"></i>
@@ -484,7 +565,7 @@
                 
                 <!-- חוות דעת 3 -->
                 <div class="testimonial-card glass-bg p-6 rounded-2xl text-center">
-                    <img src="https://page.gensparksite.com/v1/base64_upload/e9dd09e58194b90d7a604348f2b65a7a" alt="מיכל ישראלי" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+                    <div class="avatar-initials" style="background: linear-gradient(135deg, #ff9800, #f57c00);">מ״י</div>
                     <h4 class="font-semibold mb-2">מיכל ישראלי, חיפה</h4>
                     <div class="text-yellow-400 mb-3">
                         <i class="fas fa-star"></i>
@@ -587,7 +668,7 @@
                         </div>
                         <!-- הסכמה לתקשורת -->
                         <div class="flex items-center">
-                            <input type="checkbox" id="agreement" name="agreement" class="mr-2" required>
+                            <input type="checkbox" id="agreement" name="agreement" class="ml-2" required>
                             <label for="agreement" class="text-gray-700">אני מאשר/ת יצירת קשר ותיאום מנעולן</label>
                         </div>
                         <!-- כפתור שליחה -->
@@ -621,7 +702,10 @@
                 <div class="grid md:grid-cols-3 gap-8 items-center">
                     <!-- לוגו ומידע -->
                     <div class="text-center md:text-right">
-                        <img src="https://page.gensparksite.com/v1/base64_upload/0117799d78a2725c9371047b286a6f29" alt="SecureKey Locksmiths" class="h-12 w-auto mx-auto md:mx-0 mb-4">
+                        <div class="flex items-center justify-center md:justify-start mb-4">
+                            <i class="fas fa-key text-blue-600 text-2xl ml-2"></i>
+                            <span class="text-xl font-bold gradient-text">SecureKey</span>
+                        </div>
                         <p class="text-gray-600 text-sm mb-4">
                             SecureKey היא פלטפורמת תיווך. השירות מסופק בפועל ע"י מנעולנים עצמאיים.
                         </p>
@@ -668,7 +752,7 @@
                 <!-- תחתית -->
                 <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
                     <div class="mb-4 md:mb-0">
-                        <p>&copy; 2024 SecureKey. כל הזכויות שמורות.</p>
+                        <p>&copy; 2026 SecureKey. כל הזכויות שמורות.</p>
                     </div>
                     <div class="flex space-x-6 space-x-reverse">
                         <!-- קישורים למדיניות פרטיות ולתנאי שימוש מתוך האתר המקומי -->
@@ -771,15 +855,28 @@
             card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(card);
         });
+
+        // תפריט מובייל
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+                mobileOverlay.classList.toggle('open');
+            });
+            mobileOverlay.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                mobileOverlay.classList.remove('open');
+            });
+            document.querySelectorAll('#mobileMenu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                    mobileOverlay.classList.remove('open');
+                });
+            });
+        }
     </script>
 </body>
 </html>
-    <script id="html_badge_script1">
-        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
-            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDuh8xu1v6v8HFYuBrL2QEoV3XOAeyodY%2FR0buUcNT6v9UxVqDhCfUtsU1XgKmTvXRGGfoh7Zf1GtNxAfb2vEAtFc7zZMMotV3A%2BQOs7s1b%2B8sVOhXIZp1BrMRaxkdLFkObrnjlOXBRgAgofgsm2W0yZoGJa3Oeet4MDt76WWPQFaOZjkHyFKXaa%2FjOAzE%2FJqu0VV7Ll2l0xDMBtVSG8gdvKCFYmGX9dORwFGZTs97C18qjLat4Zo3CHPxnCkqjf%2Bh2DUbv6WABzXat9hLXBQOEL4LPGRawqdKFt1AfHbUd2%2BQTD%2BEIF9sUJVoPzIZ4LpW%2F%2BWq1bwPwqb4bn14hARKDz70efYConJyPPwZFipsT66Z0QgbNYAe6Age26o5Q%2F6lysot%2FzWb1Pgr7wr16g2iB4DC60FWxkbibzCAAYaRkoUI1AC7VKir7vZX6b7LW8e%2FQWhBkKvi9gapnocn%2F1AgnfaY63OXkKgkca42i9P3A11D2ipz9YDX%2BsWQCjQKvOuIZIUJrhcYMMcJwJOyqSLCAs%3D";
-        window.__genspark_locale = "en-US";
-        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDuh8xu1v6v8HFYuBrL2QEoV3XOAeyodY/R0buUcNT6v9UxVqDhCfUtsU1XgKmTvXRGGfoh7Zf1GtNxAfb2vEAtFc7zZMMotV3A+QOs7s1b+8sVOhXIZp1BrMRaxkdLFkObrnjlOXBRgAgofgsm2W0yZoGJa3Oeet4MDt76WWPQFaOZjkHyFKXaa/jOAzE/Jqu0VV7Ll2l0xDMBtVSG8gdvKCFYmGX9dORwFGZTs97C18qjLat4Zo3CHPxnCkqjf+h2DUbv6WABzXat9hLXBQOEL4LPGRawqdKFt1AfHbUd2+QTD+EIF9sUJVoPzIZ4LpW/+Wq1bwPwqb4bn14hARKDz70efYConJyPPwZFipsT66Z0QgbNYAe6Age26o5Q/6lysot/zWb1Pgr7wr16g2iB4DC60FWxkbibzCAAYaRkoUI1AC7VKir7vZX6b7LW8e/QWhBkKvi9gapnocn/1AgnfaY63OXkKgkca42i9P3A11D2ipz9YDX+sWQCjQKvOuIZIUJrhcYMMcJwJOyqSLCAs=";
-    </script>
-    
-    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
-    
