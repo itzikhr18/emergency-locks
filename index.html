@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureKey - מנעולן חירום 24/7 בכל הארץ | פריצת דלתות ורכבים</title>
+    <meta name="description" content="SecureKey – שירותי מנעולנות 24/7 בכל הארץ. פריצת דלתות, רכבים, כספות, שכפול מפתחות ומנעולים חכמים. מחירון שקוף, מענה תוך 30 דקות. התקשרו עכשיו!">
+    <meta name="keywords" content="מנעולן, מנעולן חירום, פריצת דלת, פריצת רכב, שכפול מפתחות, מנעולן רכב, מנעולן 24 שעות, החלפת צילינדר, מנעול חכם">
+    <link rel="canonical" href="https://emergency-locks.com">
+    <meta property="og:title" content="SecureKey - מנעולן חירום 24/7 בכל הארץ">
+    <meta property="og:description" content="שירותי מנעולנות מקצועיים 24/7. מענה תוך 30 דקות, מחירון שקוף.">
+    <meta property="og:type" content="website">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #3b82f6;
+            --emergency: #ef4444;
+            --emergency-dark: #dc2626;
+            --success: #22c55e;
+            --success-dark: #16a34a;
+            --amber: #f59e0b;
+            --dark: #0f172a;
+            --dark-card: #1e293b;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-400: #94a3b8;
+            --gray-600: #475569;
+            --gray-800: #1e293b;
+        }
+
+        * {
+            font-family: 'Heebo', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f8fafc;
+            color: #1e293b;
+            overflow-x: hidden;
+        }
+
+        /* === UTILITY BAR === */
+        .utility-bar {
+            background: linear-gradient(135deg, var(--dark) 0%, #1e293b 100%);
+            color: white;
+            font-size: 0.8rem;
+            padding: 6px 0;
+        }
+
+        /* === HEADER === */
+        .main-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .main-header.scrolled {
+            box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+        }
+
+        /* === HERO === */
+        .hero-section {
+            background: linear-gradient(160deg, #0f172a 0%, #1e293b 40%, #0f172a 100%);
+            position: relative;
+            overflow: hidden;
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%);
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(239,68,68,0.08) 0%, transparent 70%);
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(30px, -20px) scale(1.05); }
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        .pulse-dot {
+            position: relative;
+        }
+
+        .pulse-dot::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -12px;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+        }
+
+        .pulse-dot::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -12px;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: pulse-ring 1.5s ease-out infinite;
+        }
+
+        /* === BUTTONS === */
+        .btn-emergency {
+            background: linear-gradient(135deg, var(--emergency) 0%, var(--emergency-dark) 100%);
+            color: white;
+            padding: 16px 36px;
+            border-radius: 16px;
+            font-weight: 700;
+            font-size: 1.15rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-emergency:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(239, 68, 68, 0.45);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 16px 36px;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.35);
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: white;
+            padding: 16px 36px;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.25);
+            cursor: pointer;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.5);
+            transform: translateY(-2px);
+        }
+
+        /* === GLASS CARD === */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px) saturate(150%);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 24px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            border-color: rgba(37, 99, 235, 0.15);
+        }
+
+        /* === DARK CARD === */
+        .dark-card {
+            background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 24px;
+            color: white;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .dark-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border-color: rgba(37,99,235,0.2);
+        }
+
+        /* === BENTO GRID === */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 20px;
+        }
+
+        .bento-lg {
+            grid-column: span 8;
+        }
+
+        .bento-sm {
+            grid-column: span 4;
+        }
+
+        .bento-md {
+            grid-column: span 6;
+        }
+
+        .bento-full {
+            grid-column: span 12;
+        }
+
+        @media (max-width: 1024px) {
+            .bento-lg, .bento-sm, .bento-md {
+                grid-column: span 6;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .bento-lg, .bento-sm, .bento-md, .bento-full {
+                grid-column: span 12;
+            }
+        }
+
+        /* === SERVICE ICON === */
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .glass-card:hover .service-icon {
+            transform: scale(1.1) rotate(-3deg);
+        }
+
+        /* === PRICING TABLE === */
+        .price-table {
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        .price-row {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            padding: 16px 24px;
+            align-items: center;
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+            transition: background 0.2s ease;
+        }
+
+        .price-row:hover {
+            background: rgba(37, 99, 235, 0.04);
+        }
+
+        .price-row:last-child {
+            border-bottom: none;
+        }
+
+        .price-badge {
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        /* === TESTIMONIAL === */
+        .testimonial-card {
+            background: white;
+            border-radius: 24px;
+            padding: 32px;
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 16px;
+            left: 24px;
+            font-size: 4rem;
+            color: rgba(37,99,235,0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+        }
+
+        /* === FAQ === */
+        .faq-item {
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 16px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(37,99,235,0.15);
+        }
+
+        .faq-question {
+            padding: 20px 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background: white;
+            transition: background 0.2s ease;
+        }
+
+        .faq-question:hover {
+            background: #f8fafc;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
+            padding: 0 24px;
+            background: #f8fafc;
+            color: var(--gray-600);
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 24px 20px;
+        }
+
+        .faq-item.active .faq-chevron {
+            transform: rotate(180deg);
+        }
+
+        .faq-chevron {
+            transition: transform 0.3s ease;
+            color: var(--primary);
+        }
+
+        /* === FORM === */
+        .form-input {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e2e8f0;
+            border-radius: 14px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+            font-family: 'Heebo', sans-serif;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+        }
+
+        /* === FLOATING WHATSAPP === */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            z-index: 999;
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.12);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+        }
+
+        /* === MOBILE BOTTOM BAR === */
+        .mobile-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+            padding: 8px 16px;
+            gap: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-bar {
+                display: flex;
+            }
+            .whatsapp-float {
+                bottom: 80px;
+            }
+        }
+
+        /* === SECTION === */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: var(--gray-600);
+            max-width: 600px;
+        }
+
+        /* === STATS BAR === */
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* === SCROLL ANIMATIONS === */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* === MENU === */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 85%;
+            max-width: 360px;
+            height: 100vh;
+            background: white;
+            z-index: 200;
+            transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: -10px 0 40px rgba(0,0,0,0.15);
+            padding: 24px;
+            overflow-y: auto;
+        }
+
+        .mobile-menu.open {
+            right: 0;
+        }
+
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 199;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* === AREA BADGE === */
+        .area-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(37,99,235,0.08);
+            color: var(--primary);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .area-badge:hover {
+            background: rgba(37,99,235,0.15);
+            transform: translateY(-1px);
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 1.75rem;
+            }
+            .hero-section {
+                min-height: 85vh;
+            }
+            .stat-number {
+                font-size: 1.75rem;
+            }
+            .bento-grid {
+                gap: 12px;
+            }
+        }
+
+        /* === CAR BRANDS STRIP === */
+        .brand-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .brand-chip {
+            padding: 8px 18px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .brand-chip:hover {
+            background: rgba(37,99,235,0.15);
+            border-color: rgba(37,99,235,0.3);
+            color: white;
+        }
+
+        /* === COUNTER ANIMATION === */
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .count-animate {
+            animation: countUp 0.6s ease forwards;
+        }
+    </style>
+
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "תוך כמה זמן מגיע מנעולן?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "זמן ההגעה תלוי באזור ובזמינות המנעולנים. באזורי המרכז, ההגעה לרוב תוך 20-30 דקות. באזורי הפריפריה, זמן ההגעה עשוי להיות ארוך יותר. אנו מספקים עדכונים בזמן אמת."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "מה המחיר לפריצת דלת?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "מחירי פריצת דלת נעים בין ₪235 ל-₪825 בהתאם לסוג הדלת (רגילה, פלדלת, רב-בריח), מורכבות המנעול, שעת ההגעה ומיקום. המחיר כולל מע\"מ."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "כמה עולה שכפול מפתח לרכב?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "שכפול מפתח רגיל לרכב: ₪300-700. שכפול מפתח חכם (Keyless): ₪940-1,770 ומעלה. רכב חשמלי/היברידי (טסלה, BYD): ₪500-2,500 ומעלה. המחיר תלוי בסוג הרכב ובסוג המפתח."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "האם SecureKey הם המנעולנים?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "לא. SecureKey היא פלטפורמת תיווך המחברת אותך למנעולנים מאומתים, מקצועיים ובעלי ניסיון בכל רחבי הארץ. אנו בודקים את הרקע, הניסיון והביטוח של כל מנעולן בפלטפורמה שלנו."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "האם יש תוספת מחיר בלילה ובסופי שבוע?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "כן, ישנה תוספת של ₪120-235 עבור קריאות בערב, לילה, שבת וחגים. המחירים נקבעים מראש ובשקיפות מלאה לפני תחילת העבודה."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "SecureKey",
+        "description": "שירותי תיווך מנעולנות 24/7 בכל הארץ",
+        "telephone": "+972527237064",
+        "url": "https://emergency-locks.com",
+        "areaServed": "Israel",
+        "openingHours": "Mo-Su 00:00-24:00",
+        "priceRange": "₪235 - ₪2,500+"
+    }
+    </script>
+</head>
+<body>
+
+    <!-- ======= UTILITY TRUST BAR ======= -->
+    <div class="utility-bar">
+        <div class="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-between">
+            <div class="flex items-center gap-4 text-xs sm:text-sm">
+                <span class="flex items-center gap-1"><i class="fas fa-shield-alt text-green-400"></i> מנעולנים מאומתים ומבוטחים</span>
+                <span class="hidden sm:flex items-center gap-1"><i class="fas fa-clock text-blue-400"></i> שירות 24/7 כולל שבת וחגים</span>
+                <span class="hidden md:flex items-center gap-1"><i class="fas fa-map-marker-alt text-red-400"></i> פריסה ארצית</span>
+            </div>
+            <a href="tel:052-723-7064" class="flex items-center gap-2 text-amber-400 font-bold text-sm hover:text-amber-300 transition-colors" dir="ltr">
+                <i class="fas fa-phone-alt"></i>
+                052-723-7064
+            </a>
+        </div>
+    </div>
+
+    <!-- ======= HEADER ======= -->
+    <header class="main-header" id="mainHeader">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center">
+                    <i class="fas fa-lock text-white text-lg"></i>
+                </div>
+                <span class="text-xl font-extrabold text-gray-900">Secure<span class="text-blue-600">Key</span></span>
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-8">
+                <a href="#services" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">שירותים</a>
+                <a href="#car-locksmith" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">מנעולן רכב</a>
+                <a href="#pricing" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">מחירון</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">ביקורות</a>
+                <a href="#faq" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">שאלות נפוצות</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">צור קשר</a>
+            </nav>
+
+            <!-- Desktop CTA -->
+            <div class="hidden lg:flex items-center gap-3">
+                <a href="https://wa.me/972527237064" target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-green-50 text-green-700 font-semibold text-sm hover:bg-green-100 transition-colors">
+                    <i class="fab fa-whatsapp text-lg"></i>
+                    WhatsApp
+                </a>
+                <a href="tel:052-723-7064" class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">
+                    <i class="fas fa-phone-alt"></i>
+                    התקשר עכשיו
+                </a>
+            </div>
+
+            <!-- Mobile menu toggle -->
+            <button class="lg:hidden p-2 text-gray-700 text-xl" onclick="toggleMenu()" aria-label="תפריט">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ======= MOBILE MENU ======= -->
+    <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="flex items-center justify-between mb-8">
+            <span class="text-xl font-extrabold text-gray-900">Secure<span class="text-blue-600">Key</span></span>
+            <button onclick="toggleMenu()" class="p-2 text-gray-500 text-xl" aria-label="סגור תפריט">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col gap-1">
+            <a href="#services" onclick="toggleMenu()" class="py-3 px-4 rounded-xl text-gray-700 font-medium hover:bg-blue-50 transition-colors">
+                <i class="fas fa-tools ml-2 text-blue-500"></i>שירותים
+            </a>
+            <a href="#car-locksmith" onclick="toggleMenu()" class="py-3 px-4 rounded-xl text-gray-700 font-medium hover:bg-blue-50 transition-colors">
+                <i class="fas fa-car ml-2 text-blue-500"></i>מנעולן רכב
+            </a>
+            <a href="#pricing" onclick="toggleMenu()" class="py-3 px-4 rounded-xl text-gray-700 font-medium hover:bg-blue-50 transition-colors">
+                <i class="fas fa-shekel-sign ml-2 text-blue-500"></i>מחירון
+            </a>
+            <a href="#testimonials" onclick="toggleMenu()" class="py-3 px-4 rounded-xl text-gray-700 font-medium hover:bg-blue-50 transition-colors">
+                <i class="fas fa-star ml-2 text-blue-500"></i>ביקורות
+            </a>
+            <a href="#faq" onclick="toggleMenu()" class="py-3 px-4 rounded-xl text-gray-700 font-medium hover:bg-blue-50 transition-colors">
+                <i class="fas fa-question-circle ml-2 text-blue-500"></i>שאלות נפוצות
+            </a>
+            <a href="#contact" onclick="toggleMenu()" class="py-3 px-4 rounded-xl text-gray-700 font-medium hover:bg-blue-50 transition-colors">
+                <i class="fas fa-envelope ml-2 text-blue-500"></i>צור קשר
+            </a>
+        </nav>
+        <div class="mt-8 flex flex-col gap-3">
+            <a href="tel:052-723-7064" class="btn-emergency text-center justify-center text-base py-3">
+                <i class="fas fa-phone-alt"></i>
+                התקשר עכשיו
+            </a>
+            <a href="https://wa.me/972527237064" target="_blank" class="btn-whatsapp text-center justify-center text-base py-3">
+                <i class="fab fa-whatsapp"></i>
+                WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- ======= HERO SECTION ======= -->
+    <section class="hero-section" id="hero">
+        <div class="max-w-7xl mx-auto px-4 py-16 md:py-24 relative z-10 w-full">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Hero Content -->
+                <div>
+                    <!-- Live badge -->
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white bg-opacity-10 border border-white border-opacity-10 text-sm text-green-400 font-medium mb-6">
+                        <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                        פתוח עכשיו — 24/7 כולל שבת וחגים
+                    </div>
+
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+                        מנעולן מקצועי
+                        <br>
+                        <span class="bg-gradient-to-l from-blue-400 to-blue-600 bg-clip-text text-transparent">בכל שעה, בכל מקום</span>
+                    </h1>
+
+                    <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-4 max-w-lg">
+                        פריצת דלתות ורכבים, שכפול מפתחות, מנעולים חכמים ועוד — מנעולנים מאומתים עם הגעה מהירה ומחירון שקוף.
+                    </p>
+
+                    <!-- Trust strip -->
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="flex items-center gap-1 text-amber-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="text-white font-bold mr-1">4.9</span>
+                        </div>
+                        <span class="text-gray-400 text-sm">200+ ביקורות מאומתות</span>
+                    </div>
+
+                    <!-- Dual CTAs -->
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <a href="tel:052-723-7064" class="btn-emergency">
+                            <i class="fas fa-phone-alt"></i>
+                            חירום — התקשר עכשיו
+                        </a>
+                        <a href="https://wa.me/972527237064" target="_blank" class="btn-whatsapp">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                            WhatsApp
+                        </a>
+                    </div>
+
+                    <a href="#contact" class="btn-outline">
+                        <i class="fas fa-file-alt"></i>
+                        קבל הצעת מחיר
+                    </a>
+                </div>
+
+                <!-- Hero Stats Card -->
+                <div class="hidden md:block">
+                    <div class="bg-white bg-opacity-5 border border-white border-opacity-10 rounded-3xl p-8 backdrop-filter backdrop-blur-sm">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="text-center p-4">
+                                <div class="text-4xl font-extrabold text-white mb-1" data-counter="30">30</div>
+                                <div class="text-sm text-gray-400">דקות מענה ממוצע</div>
+                            </div>
+                            <div class="text-center p-4">
+                                <div class="text-4xl font-extrabold text-white mb-1" data-counter="5000">5,000+</div>
+                                <div class="text-sm text-gray-400">פתיחות מוצלחות</div>
+                            </div>
+                            <div class="text-center p-4">
+                                <div class="text-4xl font-extrabold text-blue-400 mb-1">24/7</div>
+                                <div class="text-sm text-gray-400">זמינות מלאה</div>
+                            </div>
+                            <div class="text-center p-4">
+                                <div class="text-4xl font-extrabold text-green-400 mb-1">100%</div>
+                                <div class="text-sm text-gray-400">מחירון שקוף</div>
+                            </div>
+                        </div>
+                        <div class="mt-6 pt-6 border-t border-white border-opacity-10 text-center">
+                            <p class="text-gray-400 text-sm mb-2">מנעולנים מאומתים עם:</p>
+                            <div class="flex items-center justify-center gap-4 text-xs text-gray-300">
+                                <span class="flex items-center gap-1"><i class="fas fa-check text-green-400"></i> אישור משטרה</span>
+                                <span class="flex items-center gap-1"><i class="fas fa-check text-green-400"></i> ביטוח מקצועי</span>
+                                <span class="flex items-center gap-1"><i class="fas fa-check text-green-400"></i> ניסיון מוכח</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= HOW IT WORKS ======= -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="section-title">איך זה עובד?</h2>
+                <p class="section-subtitle mx-auto">שלושה צעדים פשוטים לפתרון מהיר ואמין</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Step 1 -->
+                <div class="text-center fade-up">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
+                        <span class="text-3xl font-extrabold text-blue-600">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">פנו אלינו</h3>
+                    <p class="text-gray-500 leading-relaxed">התקשרו, שלחו WhatsApp או מלאו את הטופס. תארו את הבעיה ואת המיקום שלכם.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="text-center fade-up">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center">
+                        <span class="text-3xl font-extrabold text-green-600">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">שיוך מנעולן</h3>
+                    <p class="text-gray-500 leading-relaxed">אנו משייכים אתכם למנעולן מאומת באזורכם, עם הצעת מחיר שקופה מראש.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="text-center fade-up">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100 flex items-center justify-center">
+                        <span class="text-3xl font-extrabold text-amber-600">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">שירות במקום</h3>
+                    <p class="text-gray-500 leading-relaxed">המנעולן מגיע אליכם, מבצע את העבודה ומנפיק חשבונית. תשלום ישירות למנעולן.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= SERVICES (BENTO GRID) ======= -->
+    <section class="py-16 md:py-24 bg-gray-50" id="services">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="section-title">השירותים שלנו</h2>
+                <p class="section-subtitle mx-auto">כל שירותי המנעולנות תחת קורת גג אחת — בית, רכב, עסק וחירום</p>
+            </div>
+
+            <div class="bento-grid">
+                <!-- Emergency Door Service (Large) -->
+                <div class="bento-lg glass-card p-8 fade-up">
+                    <div class="flex items-start gap-6">
+                        <div class="service-icon bg-gradient-to-br from-red-100 to-red-200 text-red-600 flex-shrink-0">
+                            <i class="fas fa-door-open"></i>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <h3 class="text-xl font-bold">פריצת דלתות — חירום 24/7</h3>
+                                <span class="px-2 py-0.5 bg-red-100 text-red-700 rounded-full text-xs font-semibold">הכי נפוץ</span>
+                            </div>
+                            <p class="text-gray-500 leading-relaxed mb-4">פתיחת דלתות נעולות ללא פגיעה — דלתות רגילות, פלדלת ורב-בריח. טכנאים מוסמכים עם ניסיון מוכח בכל סוגי המנעולים.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-gray-100 rounded-lg text-sm text-gray-600">דלת רגילה</span>
+                                <span class="px-3 py-1 bg-gray-100 rounded-lg text-sm text-gray-600">פלדלת</span>
+                                <span class="px-3 py-1 bg-gray-100 rounded-lg text-sm text-gray-600">רב-בריח</span>
+                                <span class="px-3 py-1 bg-gray-100 rounded-lg text-sm text-gray-600">דלת פנים</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Smart Locks (Small) -->
+                <div class="bento-sm glass-card p-8 fade-up">
+                    <div class="service-icon bg-gradient-to-br from-purple-100 to-purple-200 text-purple-600">
+                        <i class="fas fa-fingerprint"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">מנעולים חכמים</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">התקנת מנעולים ביומטריים, אפליקציה וקוד. מותגים מובילים: Rav-Bariach, ELOCK, Kontrol.</p>
+                </div>
+
+                <!-- Car Locksmith (Small) -->
+                <div class="bento-sm glass-card p-8 fade-up" style="background: linear-gradient(145deg, #eff6ff, #dbeafe); border-color: rgba(37,99,235,0.15);">
+                    <div class="service-icon bg-gradient-to-br from-blue-200 to-blue-300 text-blue-700">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">מנעולן רכב</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">פריצת רכבים, שכפול מפתחות וקידוד שלטים. כולל רכבים חשמליים והיברידיים.</p>
+                    <a href="#car-locksmith" class="inline-flex items-center gap-1 text-blue-600 font-semibold text-sm mt-3 hover:gap-2 transition-all">
+                        מידע נוסף <i class="fas fa-arrow-left text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Cylinder Replacement (Large) -->
+                <div class="bento-lg glass-card p-8 fade-up">
+                    <div class="flex items-start gap-6">
+                        <div class="service-icon bg-gradient-to-br from-blue-100 to-blue-200 text-blue-600 flex-shrink-0">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">החלפת צילינדרים ומנעולים</h3>
+                            <p class="text-gray-500 leading-relaxed mb-4">התקנת והחלפת צילינדרים מכל הסוגים — רגילים, מתקדמים ומותגים פרימיום. כולל מנגנוני רב-בריח וידיות דלת.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-gray-100 rounded-lg text-sm text-gray-600">צילינדר רגיל</span>
+                                <span class="px-3 py-1 bg-gray-100 rounded-lg text-sm text-gray-600">צילינדר מתקדם</span>
+                                <span class="px-3 py-1 bg-gray-100 rounded-lg text-sm text-gray-600">מנגנון רב-בריח</span>
+                                <span class="px-3 py-1 bg-gray-100 rounded-lg text-sm text-gray-600">ידית דלת</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Safe Services (Medium) -->
+                <div class="bento-md glass-card p-8 fade-up">
+                    <div class="service-icon bg-gradient-to-br from-amber-100 to-amber-200 text-amber-600">
+                        <i class="fas fa-vault"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">כספות</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">פריצת כספות מכניות ודיגיטליות, תיקון, כוונון והתקנת כספות חדשות. שירות מקצועי ודיסקרטי.</p>
+                </div>
+
+                <!-- Key Duplication (Medium) -->
+                <div class="bento-md glass-card p-8 fade-up">
+                    <div class="service-icon bg-gradient-to-br from-green-100 to-green-200 text-green-600">
+                        <i class="fas fa-copy"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">שכפול מפתחות</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">שכפול מפתחות רגילים ומיוחדים, שלטים לרכב ולבית. שירות במקום עם ציוד נייד מתקדם.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= CAR LOCKSMITH SECTION ======= -->
+    <section class="py-16 md:py-24" id="car-locksmith" style="background: linear-gradient(160deg, #0f172a 0%, #1e293b 100%);">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 fade-up">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500 bg-opacity-10 border border-blue-500 border-opacity-20 text-sm text-blue-400 font-medium mb-4">
+                    <i class="fas fa-car"></i>
+                    חדש — שירות מורחב
+                </div>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">מנעולן רכב — ניידת 24/7</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">שירות מנעולנות רכב ניידת בכל הארץ. פריצת רכבים, שכפול מפתחות חכמים וקידוד — כולל תמיכה ברכבים חשמליים והיברידיים.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <!-- Car Service 1 -->
+                <div class="dark-card p-6 fade-up">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center text-white text-xl mb-4">
+                        <i class="fas fa-lock-open"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">פריצת רכב</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">פתיחת רכבים נעולים ללא נזק. כל המותגים, כולל מנעולי ואקום (VW, BMW, Mercedes).</p>
+                    <div class="mt-4 text-blue-400 font-bold">החל מ-₪200</div>
+                </div>
+
+                <!-- Car Service 2 -->
+                <div class="dark-card p-6 fade-up">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white text-xl mb-4">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">שכפול מפתחות רכב</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">שכפול מפתחות רגילים, שלטים, טרנספונדרים ומפתחות חכמים (Keyless).</p>
+                    <div class="mt-4 text-blue-400 font-bold">החל מ-₪300</div>
+                </div>
+
+                <!-- Car Service 3 -->
+                <div class="dark-card p-6 fade-up">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center text-white text-xl mb-4">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">קידוד ותכנות</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">קידוד שלטים, תכנות אימובילייזר ושחזור מפתחות אבודים בכל סוגי הרכבים.</p>
+                    <div class="mt-4 text-blue-400 font-bold">החל מ-₪280</div>
+                </div>
+
+                <!-- Car Service 4 -->
+                <div class="dark-card p-6 fade-up">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center text-white text-xl mb-4">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">רכבים חשמליים</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">שירות מנעולנות מתמחה לרכבים חשמליים והיברידיים — Tesla, BYD, Polestar ועוד.</p>
+                    <div class="mt-4 text-blue-400 font-bold">החל מ-₪500</div>
+                </div>
+            </div>
+
+            <!-- Car Brands -->
+            <div class="text-center fade-up">
+                <p class="text-gray-400 text-sm mb-4">תומכים בכל מותגי הרכב:</p>
+                <div class="brand-strip">
+                    <span class="brand-chip">Toyota</span>
+                    <span class="brand-chip">Hyundai</span>
+                    <span class="brand-chip">Kia</span>
+                    <span class="brand-chip">Mazda</span>
+                    <span class="brand-chip">Honda</span>
+                    <span class="brand-chip">BMW</span>
+                    <span class="brand-chip">Mercedes</span>
+                    <span class="brand-chip">VW</span>
+                    <span class="brand-chip">Audi</span>
+                    <span class="brand-chip">Skoda</span>
+                    <span class="brand-chip">Nissan</span>
+                    <span class="brand-chip">Ford</span>
+                    <span class="brand-chip">Peugeot</span>
+                    <span class="brand-chip">Renault</span>
+                    <span class="brand-chip">Suzuki</span>
+                    <span class="brand-chip">Tesla</span>
+                    <span class="brand-chip">BYD</span>
+                    <span class="brand-chip">Opel</span>
+                    <span class="brand-chip">Fiat</span>
+                    <span class="brand-chip">Jeep</span>
+                    <span class="brand-chip">Subaru</span>
+                    <span class="brand-chip">Citroen</span>
+                    <span class="brand-chip">Chevrolet</span>
+                    <span class="brand-chip">Mitsubishi</span>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center mt-12 fade-up">
+                <a href="tel:052-723-7064" class="btn-emergency text-lg">
+                    <i class="fas fa-phone-alt"></i>
+                    נעלתם בחוץ? התקשרו עכשיו
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= PRICING ======= -->
+    <section class="py-16 md:py-24 bg-white" id="pricing">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="section-title">מחירון שקוף — 2026</h2>
+                <p class="section-subtitle mx-auto">המחירים כוללים מע"מ. המחיר הסופי ייקבע לפי סוג הבעיה, סוג המנעול והדלת/רכב, מיקום ושעת הקריאה.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Home Services Pricing -->
+                <div class="fade-up">
+                    <div class="bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm">
+                        <div class="bg-gradient-to-l from-blue-600 to-blue-800 p-6 text-white">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-home text-2xl"></i>
+                                <div>
+                                    <h3 class="text-xl font-bold">שירותי בית ודלתות</h3>
+                                    <p class="text-blue-200 text-sm">כולל מע"מ | א'-ה' 08:00-18:00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="price-row">
+                                <span class="font-medium">דמי הגעה (ביקור טכנאי)</span>
+                                <span class="price-badge">₪235–350</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="font-medium">פריצת דלת רגילה (ללא נזק)</span>
+                                <span class="price-badge">₪235–470</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="font-medium">פריצה + החלפת צילינדר בסיסי</span>
+                                <span class="price-badge">₪350–530</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="font-medium">פלדלת / רב-בריח + צילינדר</span>
+                                <span class="price-badge">₪470–825</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="font-medium">החלפת צילינדר רגיל</span>
+                                <span class="price-badge">₪235–700</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="font-medium">צילינדר מתקדם / מותג פרימיום</span>
+                                <span class="price-badge">₪350–700</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="font-medium">החלפת מנגנון רב-בריח</span>
+                                <span class="price-badge">₪300–550</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="font-medium">התקנת מנעול חכם (כולל מוצר)</span>
+                                <span class="price-badge">₪1,200–3,500</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="font-medium">פריצת כספת ביתית</span>
+                                <span class="price-badge">₪235–530</span>
+                            </div>
+                            <div class="price-row bg-amber-50">
+                                <span class="font-medium text-amber-800"><i class="fas fa-moon ml-2"></i>תוספת ערב / לילה / שבת / חג</span>
+                                <span class="px-4 py-1.5 rounded-full bg-amber-100 text-amber-800 font-bold text-sm">+₪120–235</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car Services Pricing -->
+                <div class="fade-up">
+                    <div class="bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm">
+                        <div class="bg-gradient-to-l from-gray-800 to-gray-900 p-6 text-white">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-car text-2xl"></i>
+                                <div>
+                                    <h3 class="text-xl font-bold">שירותי רכב</h3>
+                                    <p class="text-gray-400 text-sm">כולל מע"מ | שירות ניידת בכל הארץ</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="price-row">
+                                <span class="font-medium">פריצת רכב — מנעול רגיל</span>
+                                <span class="price-badge">₪200–300</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="font-medium">פריצת רכב — מנעול ואקום (Opel, Audi, Mercedes)</span>
+                                <span class="price-badge">₪450–700</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="font-medium">פריצת רכב — VW / BMW</span>
+                                <span class="price-badge">₪850–1,100</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="font-medium">שכפול שלט / מפתח רגיל</span>
+                                <span class="price-badge">₪300–500</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="font-medium">שכפול מפתח חכם (Keyless)</span>
+                                <span class="price-badge">₪940–1,770+</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="font-medium">שחזור מפתח אבוד</span>
+                                <span class="price-badge">₪330–2,500</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="font-medium">קידוד שלט / אימובילייזר</span>
+                                <span class="price-badge">₪280–700</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="font-medium">תיקון סוויץ'</span>
+                                <span class="price-badge">₪380+</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="font-medium">רכב חשמלי / היברידי (Tesla, BYD)</span>
+                                <span class="price-badge">₪500–2,500+</span>
+                            </div>
+                            <div class="price-row bg-amber-50">
+                                <span class="font-medium text-amber-800"><i class="fas fa-moon ml-2"></i>תוספת ערב / לילה / שבת / חג</span>
+                                <span class="px-4 py-1.5 rounded-full bg-amber-100 text-amber-800 font-bold text-sm">+₪120–235</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8 fade-up">
+                <p class="text-gray-400 text-sm">* המחירים הם טווחים מקובלים בשוק ועשויים להשתנות בהתאם למורכבות העבודה ולשעת הקריאה. המחיר הסופי ייקבע ע"י המנעולן לפני תחילת העבודה.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= SERVICE AREAS ======= -->
+    <section class="py-16 md:py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12 fade-up">
+                <h2 class="section-title">פריסה ארצית — בכל מקום בארץ</h2>
+                <p class="section-subtitle mx-auto">מנעולנים מאומתים בכל רחבי ישראל עם הגעה מהירה</p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8 mb-8 fade-up">
+                <div class="text-center">
+                    <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">מרכז</h3>
+                    <p class="text-sm text-gray-500">תל אביב, רמת גן, פתח תקווה, ראשון לציון, חולון, הרצליה, רעננה, כפר סבא, רחובות</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-amber-100 flex items-center justify-center text-amber-600">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">ירושלים</h3>
+                    <p class="text-sm text-gray-500">ירושלים, בית שמש, מודיעין, מעלה אדומים</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">צפון</h3>
+                    <p class="text-sm text-gray-500">חיפה, נתניה, חדרה, טבריה, עפולה, נצרת, עכו</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-red-100 flex items-center justify-center text-red-600">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">דרום</h3>
+                    <p class="text-sm text-gray-500">באר שבע, אשדוד, אשקלון, אילת</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= TESTIMONIALS ======= -->
+    <section class="py-16 md:py-24 bg-white" id="testimonials">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="section-title">מה הלקוחות אומרים</h2>
+                <p class="section-subtitle mx-auto">ביקורות אמיתיות מלקוחות מרוצים בכל הארץ</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card fade-up">
+                    <div class="flex items-center gap-1 text-amber-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed mb-6">הגעתי הביתה בשעה 23:00 וגיליתי שהמפתח נשבר בתוך המנעול. תוך 25 דקות כבר היה מנעולן אצלי, פתח את הדלת ללא נזק והחליף צילינדר. מחיר הוגן ושירות מקצועי.</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white font-bold">ד.כ</div>
+                        <div>
+                            <div class="font-bold">דוד כהן</div>
+                            <div class="text-sm text-gray-400">תל אביב</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card fade-up">
+                    <div class="flex items-center gap-1 text-amber-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed mb-6">נעלתי את המפתחות ברכב עם התינוק בפנים. התקשרתי במצב פאניקה וקיבלתי מנעולן תוך 15 דקות! פתח את הרכב בלי שריטה. ממליצה בחום, שירות מציל חיים.</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 to-pink-700 flex items-center justify-center text-white font-bold">ש.ל</div>
+                        <div>
+                            <div class="font-bold">שרה לוי</div>
+                            <div class="text-sm text-gray-400">ירושלים</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card fade-up">
+                    <div class="flex items-center gap-1 text-amber-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed mb-6">הזמנתי שכפול מפתח חכם לאאודי. המנעולן הגיע עם ניידת, עשה את הכל במקום תוך 30 דקות. המפתח עובד מצוין. מחיר הגיוני ביחס למה שהסוכנות מבקשת.</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center text-white font-bold">מ.י</div>
+                        <div>
+                            <div class="font-bold">מיכל ישראלי</div>
+                            <div class="text-sm text-gray-400">חיפה</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card fade-up">
+                    <div class="flex items-center gap-1 text-amber-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed mb-6">התקנו מנעול חכם ביומטרי על דלת הפלדלת. ההתקנה הייתה מקצועית ומהירה. עכשיו אנחנו פותחים את הדלת עם טביעת אצבע — אין יותר בעיות עם מפתחות.</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center text-white font-bold">א.ר</div>
+                        <div>
+                            <div class="font-bold">אבי רוזנברג</div>
+                            <div class="text-sm text-gray-400">רעננה</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card fade-up">
+                    <div class="flex items-center gap-1 text-amber-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed mb-6">נעלתי את הטסלה עם כל המטען בפנים. חששתי שמנעולן לא יוכל לטפל ברכב חשמלי, אבל הטכנאי שהגיע היה מקצוען ופתח את הרכב תוך דקות. מומלץ מאוד!</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-teal-500 to-teal-700 flex items-center justify-center text-white font-bold">ר.ב</div>
+                        <div>
+                            <div class="font-bold">רון ברגמן</div>
+                            <div class="text-sm text-gray-400">הרצליה</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card fade-up">
+                    <div class="flex items-center gap-1 text-amber-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed mb-6">פנינו בשבת בבוקר אחרי שנתקענו מחוץ לבית. למרות שזו שבת, המנעולן הגיע מהר. כן הייתה תוספת שבת, אבל ידענו על זה מראש. שקיפות מלאה, ממליץ.</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-white font-bold">י.מ</div>
+                        <div>
+                            <div class="font-bold">יוסי מזרחי</div>
+                            <div class="text-sm text-gray-400">באר שבע</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= FAQ ======= -->
+    <section class="py-16 md:py-24 bg-gray-50" id="faq">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="section-title">שאלות נפוצות</h2>
+                <p class="section-subtitle mx-auto">תשובות לשאלות שהכי שואלים אותנו</p>
+            </div>
+
+            <div class="fade-up">
+                <div class="faq-item active">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>תוך כמה זמן מגיע מנעולן?</span>
+                        <i class="fas fa-chevron-down faq-chevron"></i>
+                    </div>
+                    <div class="faq-answer">
+                        זמן ההגעה תלוי באזור ובזמינות המנעולנים. באזורי המרכז, ההגעה לרוב תוך 20-30 דקות. באזורי הפריפריה, זמן ההגעה עשוי להיות ארוך יותר. אנו מספקים עדכונים בזמן אמת ושיוך למנעולן הקרוב אליכם.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>איך נקבע המחיר?</span>
+                        <i class="fas fa-chevron-down faq-chevron"></i>
+                    </div>
+                    <div class="faq-answer">
+                        המחיר תלוי בסוג הבעיה (פריצה, החלפה, שכפול), סוג המנעול/דלת/רכב, מיקום ושעת הקריאה. המנעולן מציג את המחיר מראש לפני תחילת העבודה, ללא הפתעות. תוספות ערב/לילה/שבת מצוינות מראש.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>האם SecureKey הם המנעולנים?</span>
+                        <i class="fas fa-chevron-down faq-chevron"></i>
+                    </div>
+                    <div class="faq-answer">
+                        לא. SecureKey היא פלטפורמת תיווך המחברת אותך למנעולנים מאומתים ומקצועיים בכל רחבי הארץ. אנו בודקים את הרקע, הניסיון, הביטוח והמחירים של כל מנעולן בפלטפורמה שלנו כדי להבטיח שירות איכותי.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>יש תוספת מחיר בלילה ובסופי שבוע?</span>
+                        <i class="fas fa-chevron-down faq-chevron"></i>
+                    </div>
+                    <div class="faq-answer">
+                        כן, ישנה תוספת של ₪120-235 עבור קריאות בערב, לילה, שבת וחגים. התוספת נקבעת מראש ובשקיפות מלאה לפני תחילת העבודה, כך שלא יהיו הפתעות.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>כמה עולה שכפול מפתח לרכב?</span>
+                        <i class="fas fa-chevron-down faq-chevron"></i>
+                    </div>
+                    <div class="faq-answer">
+                        מפתח רגיל עם שלט: ₪300-500. מפתח חכם (Keyless): ₪940-1,770 ומעלה. רכב חשמלי/היברידי: ₪500-2,500 ומעלה. המחיר תלוי בסוג הרכב, סוג המפתח ובמורכבות התכנות. השירות ניתן במקום עם ציוד נייד.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>איך משלמים?</span>
+                        <i class="fas fa-chevron-down faq-chevron"></i>
+                    </div>
+                    <div class="faq-answer">
+                        התשלום ישירות למנעולן, לאחר סיום העבודה. ניתן לשלם במזומן, כרטיס אשראי או אפליקציית תשלום. המנעולן מספק חשבונית מס כחוק.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>המנעולנים מאומתים?</span>
+                        <i class="fas fa-chevron-down faq-chevron"></i>
+                    </div>
+                    <div class="faq-answer">
+                        כן. כל מנעולן בפלטפורמה עובר תהליך אימות הכולל בדיקת רקע, אימות ביטוח מקצועי, בדיקת ניסיון והכשרות. אנו אוספים משוב מלקוחות ומסירים מנעולנים שלא עומדים בסטנדרטים שלנו.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= CONTACT FORM ======= -->
+    <section class="py-16 md:py-24 bg-white" id="contact">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <!-- Form -->
+                <div class="fade-up">
+                    <h2 class="section-title mb-2">קבלו הצעת מחיר</h2>
+                    <p class="text-gray-500 mb-8">מלאו את הפרטים ונחזור אליכם בהקדם עם מנעולן מתאים באזורכם.</p>
+
+                    <form id="leadForm" class="space-y-5">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">שם מלא *</label>
+                            <input type="text" name="name" required class="form-input" placeholder="הכנס/י שם מלא">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">טלפון נייד *</label>
+                            <input type="tel" name="phone" required class="form-input" placeholder="05XXXXXXXX" dir="ltr" style="text-align: right;">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">כתובת מלאה *</label>
+                            <input type="text" name="address" required class="form-input" placeholder="עיר, רחוב, מספר בית">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">תיאור הבעיה *</label>
+                            <textarea name="problem" required rows="3" class="form-input" placeholder="תארו את הבעיה בקצרה..."></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">דחיפות *</label>
+                            <select name="urgency" required class="form-input">
+                                <option value="">בחרו רמת דחיפות</option>
+                                <option value="immediate">מיידי — עכשיו</option>
+                                <option value="today">במהלך היום</option>
+                                <option value="flexible">גמיש — לא דחוף</option>
+                            </select>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" name="agreement" id="agreement" required class="mt-1 w-4 h-4 text-blue-600 rounded">
+                            <label for="agreement" class="text-sm text-gray-500">
+                                אני מסכים/ה ל<a href="terms.html" class="text-blue-600 hover:underline">תנאי השימוש</a> ול<a href="privacy.html" class="text-blue-600 hover:underline">מדיניות הפרטיות</a>, ומאשר/ת העברת פרטיי למנעולן מתאים.
+                            </label>
+                        </div>
+                        <button type="submit" class="btn-primary w-full justify-center text-lg py-4">
+                            <i class="fas fa-paper-plane"></i>
+                            שלח פנייה
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="fade-up">
+                    <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 md:p-10 text-white">
+                        <h3 class="text-2xl font-bold mb-6">צריכים עזרה מיידית?</h3>
+                        <p class="text-gray-300 mb-8 leading-relaxed">לשירות מהיר ומיידי, התקשרו או שלחו הודעת WhatsApp. אנו זמינים 24 שעות ביממה, 7 ימים בשבוע, כולל שבתות וחגים.</p>
+
+                        <div class="space-y-6">
+                            <a href="tel:052-723-7064" class="flex items-center gap-4 p-4 rounded-2xl bg-white bg-opacity-5 border border-white border-opacity-10 hover:bg-opacity-10 transition-colors" dir="ltr">
+                                <div class="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone-alt text-white"></i>
+                                </div>
+                                <div style="direction: rtl;">
+                                    <div class="text-sm text-gray-400">טלפון</div>
+                                    <div class="font-bold text-lg">052-723-7064</div>
+                                </div>
+                            </a>
+
+                            <a href="https://wa.me/972527237064" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-white bg-opacity-5 border border-white border-opacity-10 hover:bg-opacity-10 transition-colors">
+                                <div class="w-12 h-12 rounded-xl bg-green-600 flex items-center justify-center flex-shrink-0">
+                                    <i class="fab fa-whatsapp text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-gray-400">WhatsApp</div>
+                                    <div class="font-bold text-lg">שלחו הודעה</div>
+                                </div>
+                            </a>
+
+                            <div class="flex items-center gap-4 p-4 rounded-2xl bg-white bg-opacity-5 border border-white border-opacity-10">
+                                <div class="w-12 h-12 rounded-xl bg-amber-600 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-clock text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-gray-400">שעות פעילות</div>
+                                    <div class="font-bold">24/7 — כל יום, כל שעה</div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4 p-4 rounded-2xl bg-white bg-opacity-5 border border-white border-opacity-10">
+                                <div class="w-12 h-12 rounded-xl bg-purple-600 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-gray-400">אזור שירות</div>
+                                    <div class="font-bold">כל הארץ — פריסה ארצית</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= FOOTER ======= -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-10 mb-12">
+                <!-- Brand -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-lock text-white text-lg"></i>
+                        </div>
+                        <span class="text-xl font-extrabold">Secure<span class="text-blue-400">Key</span></span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed max-w-sm mb-6">
+                        פלטפורמת התיווך המובילה בישראל למנעולנים מקצועיים ואמינים. אנו מחברים אתכם למנעולן מאומת באזורכם — 24/7, עם מחירון שקוף וללא הפתעות.
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <a href="tel:052-723-7064" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition-colors">
+                            <i class="fas fa-phone-alt text-sm"></i>
+                        </a>
+                        <a href="https://wa.me/972527237064" target="_blank" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition-colors">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4">קישורים מהירים</h4>
+                    <nav class="flex flex-col gap-3">
+                        <a href="#services" class="text-gray-400 hover:text-white transition-colors">שירותים</a>
+                        <a href="#car-locksmith" class="text-gray-400 hover:text-white transition-colors">מנעולן רכב</a>
+                        <a href="#pricing" class="text-gray-400 hover:text-white transition-colors">מחירון 2026</a>
+                        <a href="#testimonials" class="text-gray-400 hover:text-white transition-colors">ביקורות</a>
+                        <a href="#faq" class="text-gray-400 hover:text-white transition-colors">שאלות נפוצות</a>
+                        <a href="#contact" class="text-gray-400 hover:text-white transition-colors">צור קשר</a>
+                    </nav>
+                </div>
+
+                <!-- Legal -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4">מידע משפטי</h4>
+                    <nav class="flex flex-col gap-3">
+                        <a href="terms.html" class="text-gray-400 hover:text-white transition-colors">תנאי שימוש</a>
+                        <a href="privacy.html" class="text-gray-400 hover:text-white transition-colors">מדיניות פרטיות</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-gray-500 text-sm">&copy; 2026 SecureKey. כל הזכויות שמורות.</p>
+                <p class="text-gray-600 text-xs">שירותי תיווך מנעולנות — SecureKey אינה מספקת שירותי מנעולנות ישירים</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ======= FLOATING WHATSAPP ======= -->
+    <a href="https://wa.me/972527237064" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ======= MOBILE BOTTOM BAR ======= -->
+    <div class="mobile-bar">
+        <a href="tel:052-723-7064" class="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-red-500 text-white font-bold text-sm">
+            <i class="fas fa-phone-alt"></i>
+            התקשר
+        </a>
+        <a href="https://wa.me/972527237064" target="_blank" class="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-green-500 text-white font-bold text-sm">
+            <i class="fab fa-whatsapp"></i>
+            WhatsApp
+        </a>
+        <a href="#contact" class="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-blue-600 text-white font-bold text-sm">
+            <i class="fas fa-file-alt"></i>
+            הצעת מחיר
+        </a>
+    </div>
+
+    <!-- ======= SCRIPTS ======= -->
+    <script>
+        // === FORM SUBMISSION ===
+        (function() {
+            const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwGNqSVX0khLyZCaEg_DJAtEyzcBw_QQ_ebX5_PnQ1IAwexBN01PvhBmQbR51wGtQ6Gw/exec';
+            const leadForm = document.getElementById('leadForm');
+            leadForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const formData = {
+                    name: leadForm.name.value.trim(),
+                    phone: leadForm.phone.value.trim(),
+                    address: leadForm.address.value.trim(),
+                    problem: leadForm.problem.value.trim(),
+                    urgency: leadForm.urgency.value,
+                    agreement: leadForm.agreement.checked
+                };
+                if (!formData.name || !formData.phone || !formData.address || !formData.problem || !formData.urgency || !formData.agreement) {
+                    alert('אנא מלא/י את כל השדות והסימון הדרושים.');
+                    return;
+                }
+                const phoneRegex = /^05[0-9]{8}$/;
+                if (!phoneRegex.test(formData.phone)) {
+                    alert('אנא הכנס/י מספר טלפון נייד ישראלי תקין (05XXXXXXXX).');
+                    return;
+                }
+                const btn = leadForm.querySelector('button[type="submit"]');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> שולח...';
+                btn.disabled = true;
+                try {
+                    const params = new URLSearchParams({
+                        name: formData.name,
+                        phone: formData.phone,
+                        address: formData.address,
+                        problem: formData.problem,
+                        urgency: formData.urgency,
+                        agreement: formData.agreement ? 'Yes' : 'No'
+                    });
+                    const requestUrl = `${WEB_APP_URL}?${params.toString()}`;
+                    await fetch(requestUrl, { method: 'GET', mode: 'no-cors' });
+                    alert('תודה! פנייתך התקבלה. נחזור אליך בהקדם עם מנעולן מתאים.');
+                    leadForm.reset();
+                } catch (error) {
+                    console.error('Error submitting form:', error);
+                    alert('אירעה שגיאה בשליחת הטופס. נסה/י שוב מאוחר יותר.');
+                } finally {
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                }
+            });
+        })();
+
+        // === SMOOTH SCROLL ===
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // === HEADER SCROLL ===
+        const header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // === MOBILE MENU ===
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+            document.getElementById('menuOverlay').classList.toggle('active');
+            document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
+        }
+
+        // === FAQ ACCORDION ===
+        function toggleFaq(el) {
+            const item = el.parentElement;
+            const wasActive = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+            if (!wasActive) item.classList.add('active');
+        }
+
+        // === SCROLL ANIMATIONS ===
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+    </script>
+</body>
+</html>
